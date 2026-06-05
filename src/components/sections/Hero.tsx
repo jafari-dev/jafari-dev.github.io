@@ -143,7 +143,7 @@ export default function Hero() {
 
             <motion.div
               className="absolute -bottom-4 -left-4 glass neon-border rounded-xl px-4 py-2"
-              animate={{ y: [0, -6, 0] }}
+              animate={{ y: [0, -20, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
               <p className="text-2xl text-center font-bold font-display text-neon-cyan">
@@ -156,7 +156,7 @@ export default function Hero() {
 
             <motion.div
               className="absolute -top-4 -right-4 glass neon-border rounded-xl px-4 py-2"
-              animate={{ y: [0, 6, 0] }}
+              animate={{ y: [0, 20, 0] }}
               transition={{
                 duration: 3.5,
                 repeat: Infinity,

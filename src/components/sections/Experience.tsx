@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { MapPin, Calendar, ExternalLink } from 'lucide-react';
+import { MapPin, Calendar } from 'lucide-react';
 import Image from 'next/image';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { experiences } from '@/data/portfolio';
@@ -87,20 +87,12 @@ export default function Experience() {
                             </span>
                           )}
                         </div>
-                        <div className="flex items-center gap-1 mt-1">
-                          <a
-                            href={exp.website && exp.website !== '#' ? exp.website : undefined}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`font-semibold ${colors.bullet} hover:underline flex items-center gap-1`}
-                          >
-                            {exp.company}
-                            {exp.website !== '#' && <ExternalLink size={12} />}
-                          </a>
-                          <span className={`text-xs px-2 py-0.5 rounded-full border ${colors.badge} ms-2`}>
-                            {exp.type}
-                          </span>
-                        </div>
+                        <span className={`font-semibold mt-1 block ${colors.bullet}`}>
+                          {exp.company}
+                        </span>
+                        <span className={`inline-block mt-1 text-xs px-2 py-0.5 rounded-full border ${colors.badge}`}>
+                          {exp.type}
+                        </span>
                       </div>
                       {exp.logo && (
                         <div className="shrink-0 w-10 h-10 rounded-lg overflow-hidden bg-white border border-slate-200 dark:border-white/10 p-1 flex items-center justify-center">
