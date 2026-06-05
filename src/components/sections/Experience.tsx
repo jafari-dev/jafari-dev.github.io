@@ -50,13 +50,11 @@ export default function Experience() {
 
   return (
     <section id="experience" className="relative py-24">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-linear-to-b from-transparent via-neon-cyan/10 to-transparent pointer-events-none" />
-
       <div className="relative z-10 max-w-4xl mx-auto px-2 sm:px-6">
         <SectionTitle title={t('title')} subtitle={t('subtitle')} />
 
         <div className="relative">
-          <div className="absolute inset-s-6 sm:inset-s-8 top-0 bottom-0 w-px bg-linear-to-b from-neon-cyan/40 via-neon-purple/20 to-transparent" />
+          <div className="hidden sm:block absolute inset-s-8 top-0 bottom-0 w-px bg-linear-to-b from-neon-cyan/50 via-neon-purple/40 to-neon-cyan/30" />
 
           <div className="space-y-8">
             {experiences.map((exp, i) => {
@@ -70,7 +68,7 @@ export default function Experience() {
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ duration: 0.6, delay: 0.1 * i }}
                 >
-                  <div className="relative shrink-0 w-12 sm:w-16 flex justify-center">
+                  <div className="hidden sm:flex relative shrink-0 w-16 justify-center">
                     <div className={`w-4 h-4 rounded-full mt-5 ${colors.dot} z-10`} />
                   </div>
 
