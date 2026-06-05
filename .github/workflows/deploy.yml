@@ -46,7 +46,7 @@ jobs:
         run: pnpm install --no-frozen-lockfile
 
       - name: Build
-        run: node node_modules/.bin/next build
+        run: node node_modules/next/dist/bin/next build
 
       - name: Add .nojekyll
         run: touch out/.nojekyll
