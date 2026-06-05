@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "contact": "Contact",
+    "toggle_theme": "Toggle theme",
+    "toggle_language": "Switch to Persian"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "title": "Senior Front-end Engineer",
+    "subtitle": "I build high-performance web applications with modern tech stacks. Specializing in React, Next.js, and TypeScript with a focus on architecture and user experience.",
+    "cta_cv": "Download CV",
+    "cta_contact": "Get in Touch",
+    "scroll": "Scroll Down",
+    "available": "Available for opportunities"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Who I Am",
+    "description": "Front-end Engineer with 7+ years of experience designing and building high-performance web applications. I specialize in React, Next.js, and TypeScript, with deep expertise in software architecture, performance optimization, and testing automation.",
+    "description2": "Currently working as a Full-Stack Engineer at Partnerz (Dubai), I've contributed to products serving 200+ universities globally and a mental health study with 20,000+ participants.",
+    "stat_years": "Years Experience",
+    "stat_clients": "University Clients",
+    "stat_participants": "Research Participants",
+    "stat_coverage": "Test Coverage"
+  },
+  "skills": {
+    "title": "Tech Stack",
+    "subtitle": "Technologies I Work With"
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "My Professional Journey",
+    "present": "Present"
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "Academic Background",
+    "degree": "Bachelor of Software Engineering",
+    "university": "Bu-Ali Sina University",
+    "location": "Hamedan, Iran",
+    "period": "2015 – 2019"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Let's Work Together",
+    "description": "Have a project in mind, want to collaborate, or just say hello? My inbox is always open.",
+    "email_label": "Email",
+    "github_label": "GitHub",
+    "linkedin_label": "LinkedIn",
+    "location_label": "Location",
+    "location_value": "Tehran, Iran",
+    "copy_email": "Copy email",
+    "copied": "Copied!"
+  },
+  "footer": {
+    "built_with": "Built with Next.js, TypeScript & Tailwind CSS",
+    "rights": "All rights reserved"
+  }
+}

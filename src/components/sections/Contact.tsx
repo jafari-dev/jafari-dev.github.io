@@ -1,0 +1,166 @@
+'use client';
+
+import React from 'react';
+import { useTranslations } from 'next-intl';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Mail, MapPin, Copy, Check, ExternalLink } from 'lucide-react';
+import { GitHubIcon, LinkedInIcon } from '@/components/ui/Icons';
+import SectionTitle from '@/components/ui/SectionTitle';
+import NeonButton from '@/components/ui/NeonButton';
+import { socialLinks } from '@/data/portfolio';
+
+export default function Contact() {
+  const t = useTranslations('contact');
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    await navigator.clipboard.writeText(socialLinks.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  type ContactItem = {
+    icon: React.ReactNode;
+    label: string;
+    value: string;
+    href: string | null;
+    color: string;
+    border: string;
+    bg: string;
+    external?: boolean;
+    action?: () => void;
+    actionIcon?: React.ReactNode;
+    actionLabel?: string;
+  };
+
+  const contactItems: ContactItem[] = [
+    {
+      icon: <Mail size={22} />,
+      label: t('email_label'),
+      value: socialLinks.email,
+      href: `mailto:${socialLinks.email}`,
+      color: 'text-neon-cyan',
+      border: 'border-neon-cyan/20 hover:border-neon-cyan/50',
+      bg: 'bg-neon-cyan/5',
+      action: copyEmail,
+      actionIcon: copied ? <Check size={16} /> : <Copy size={16} />,
+      actionLabel: copied ? t('copied') : t('copy_email'),
+    },
+    {
+      icon: <GitHubIcon size={22} />,
+      label: t('github_label'),
+      value: '@jafari-dev',
+      href: socialLinks.github,
+      color: 'text-neon-purple',
+      border: 'border-neon-purple/20 hover:border-neon-purple/50',
+      bg: 'bg-neon-purple/5',
+      external: true,
+    },
+    {
+      icon: <LinkedInIcon size={22} />,
+      label: t('linkedin_label'),
+      value: '@jafari-dev',
+      href: socialLinks.linkedin,
+      color: 'text-neon-green',
+      border: 'border-neon-green/20 hover:border-neon-green/50',
+      bg: 'bg-neon-green/5',
+      external: true,
+    },
+    {
+      icon: <MapPin size={22} />,
+      label: t('location_label'),
+      value: t('location_value'),
+      href: null,
+      color: 'text-neon-pink',
+      border: 'border-neon-pink/20 hover:border-neon-pink/50',
+      bg: 'bg-neon-pink/5',
+    },
+  ];
+
+  return (
+    <section id="contact" className="relative py-24">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-t from-dark-900/30 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] glow-spot-cyan opacity-15 pointer-events-none" />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
+        <SectionTitle title={t('title')} subtitle={t('subtitle')} />
+
+        <motion.p
+          className="text-center text-slate-400 text-base sm:text-lg mb-12 max-w-xl mx-auto"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          {t('description')}
+        </motion.p>
+
+        <div className="grid sm:grid-cols-2 gap-4 mb-10">
+          {contactItems.map((item, i) => (
+            <motion.div
+              key={item.label}
+              className={`glass rounded-2xl p-5 border transition-all duration-300 ${item.border} group`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 * i }}
+              whileHover={{ y: -3 }}
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className={`w-11 h-11 rounded-xl ${item.bg} border ${item.border} flex items-center justify-center ${item.color} flex-shrink-0`}>
+                    {item.icon}
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-500 font-mono mb-0.5">{item.label}</p>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        target={item.external ? '_blank' : undefined}
+                        rel={item.external ? 'noopener noreferrer' : undefined}
+                        className={`text-sm font-medium ${item.color} hover:underline flex items-center gap-1`}
+                      >
+                        {item.value}
+                        {item.external && <ExternalLink size={12} />}
+                      </a>
+                    ) : (
+                      <p className={`text-sm font-medium ${item.color}`}>{item.value}</p>
+                    )}
+                  </div>
+                </div>
+
+                {item.action && (
+                  <motion.button
+                    onClick={item.action}
+                    className={`p-2 rounded-lg text-slate-500 hover:${item.color} hover:bg-white/5 transition-all duration-200 text-xs flex items-center gap-1`}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    title={item.actionLabel}
+                  >
+                    {item.actionIcon}
+                  </motion.button>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <motion.div
+          className="flex justify-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <NeonButton href={`mailto:${socialLinks.email}`} variant="primary" size="lg">
+            <Mail size={20} />
+            {t('email_label')}: {socialLinks.email}
+          </NeonButton>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
