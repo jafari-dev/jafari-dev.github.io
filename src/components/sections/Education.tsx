@@ -10,7 +10,7 @@ export default function Education() {
 
   return (
     <section className="relative py-16">
-      <div className="relative z-10 max-w-4xl mx-auto px-2 sm:px-6">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
         <SectionTitle title={t('title')} subtitle={t('subtitle')} />
 
         <motion.div

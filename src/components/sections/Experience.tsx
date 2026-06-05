@@ -75,7 +75,7 @@ export default function Experience() {
     <section id="experience" className="relative py-24">
       <div className="absolute top-1/3 -left-20 w-96 h-96 glow-spot-purple opacity-10 pointer-events-none" />
       <div className="absolute bottom-1/3 -right-20 w-96 h-96 glow-spot-cyan opacity-10 pointer-events-none" />
-      <div className="relative z-10 max-w-4xl mx-auto px-2 sm:px-6">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
         <SectionTitle title={t('title')} subtitle={t('subtitle')} />
 
         <div className="relative">
