@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { skillCategories } from '@/data/portfolio';
+import { skillIcons } from '@/data/skillIcons';
 
 const categoryColors = [
   { border: 'border-neon-cyan/20',   text: 'text-neon-cyan',   badge: 'bg-neon-cyan/10 border-neon-cyan/30 text-neon-cyan',     dot: 'bg-neon-cyan',   glow: 'via-neon-cyan/60',   spot: 'bg-neon-cyan/10'   },
@@ -45,18 +46,24 @@ export default function Skills() {
                   </h3>
 
                 <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, skillIdx) => (
-                    <motion.span
-                      key={skill}
-                      className={`px-3 py-1 rounded-full text-xs font-medium border ${colors.badge} cursor-default select-none transition-all duration-200 hover:scale-105`}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: 0.05 * skillIdx + 0.1 * catIdx }}
-                    >
-                      {skill}
-                    </motion.span>
-                  ))}
+                  {category.skills.map((skill, skillIdx) => {
+                    const icon = skillIcons[skill];
+                    return (
+                      <motion.span
+                        key={skill}
+                        className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border ${colors.badge} cursor-default select-none transition-all duration-200 hover:scale-105`}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: 0.05 * skillIdx + 0.1 * catIdx }}
+                      >
+                        {icon && (
+                          <img src={icon} alt="" aria-hidden="true" className="w-3.5 h-3.5 dark:invert" />
+                        )}
+                        {skill}
+                      </motion.span>
+                    );
+                  })}
                 </div>
               </motion.div>
             );

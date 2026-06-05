@@ -154,15 +154,19 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     title: 'Front-end',
-    skills: ['React', 'Next.js', 'Tailwind CSS', 'HTML / CSS', 'SCSS', 'MUI', 'Ant Design', 'PWA', 'Webpack', 'Vite'],
+    skills: ['React', 'Next.js', 'Tailwind CSS', 'SCSS', 'MUI', 'Ant Design', 'Zustand', 'TanStack Query', 'Vite','Webpack'],
   },
   {
     title: 'Back-end',
-    skills: ['Node.js', 'NestJS', 'Express', 'Django', 'PostgreSQL', 'MongoDB', 'Redis', 'GraphQL', 'REST APIs', 'Nginx'],
+    skills: ['Node.js', 'NestJS', 'Express', 'Django', 'PostgreSQL', 'SQL', 'MongoDB', 'Redis', 'GraphQL', 'Swagger', 'Nginx'],
   },
   {
     title: 'Testing',
-    skills: ['Jest', 'Vitest', 'React Testing Library', 'Cypress', 'Playwright', 'Storybook'],
+    skills: ['Jest', 'Vitest', 'Storybook', 'React Testing Library', 'Cypress', 'Playwright', ],
+  },
+  {
+    title: 'Architecture',
+    skills: ['Micro-frontends', 'Monorepo', 'SOLID', 'Design Patterns', 'Clean Architecture', 'TDD', 'DDD'],
   },
   {
     title: 'Tools & Others',
