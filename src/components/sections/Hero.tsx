@@ -46,7 +46,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-60 sm:pb-44 lg:py-24 w-full">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-24 lg:py-24 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-20 lg:gap-20">
           {/* Text content */}
           <motion.div
@@ -143,7 +143,7 @@ export default function Hero() {
 
             <motion.div
               className="absolute -bottom-4 -left-4 glass neon-border rounded-xl px-4 py-2"
-              animate={{ y: [20, -20, 20] }}
+              animate={{ y: [10, -10, 10] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
               <p className="text-2xl text-center font-bold font-display text-neon-cyan">
@@ -156,7 +156,7 @@ export default function Hero() {
 
             <motion.div
               className="absolute -top-4 -right-4 glass neon-border rounded-xl px-4 py-2"
-              animate={{ y: [-20, 20, -20] }}
+              animate={{ y: [-10, 10, -10] }}
               transition={{
                 duration: 3.5,
                 repeat: Infinity,
@@ -181,7 +181,7 @@ export default function Hero() {
               .getElementById("about")
               ?.scrollIntoView({ behavior: "smooth" })
           }
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-600 dark:text-slate-500 hover:text-neon-cyan transition-colors cursor-pointer"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-600 dark:text-slate-500 hover:text-neon-cyan transition-colors cursor-pointer"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}

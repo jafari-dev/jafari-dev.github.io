@@ -4,11 +4,12 @@ export interface Experience {
   website: string | null;
   role: string;
   location: string;
-  period: string;
-  type: "Full-time" | "Part-time" | "Contract";
+  start: Date;
+  end: Date | null;
+  employmentType: "Full-time" | "Part-time" | "Contract";
+  locationType: "On-site" | "Remote" | "Hybrid";
   highlights: string[];
   color: 'cyan' | 'purple' | 'green' | 'pink' | 'orange';
-  current?: boolean;
   logo?: string;
 }
 
@@ -24,15 +25,16 @@ export const experiences: Experience[] = [
     website: 'https://partnerz.io',
     role: 'Full-Stack Engineer',
     location: 'Dubai, UAE · Remote',
-    period: 'Jul 2025 – Present',
-    type: 'Full-time',
+    start: new Date('2025-07-01'),
+    end: null,
+    employmentType: 'Full-time',
+    locationType: 'Remote',
     highlights: [
       'Engineered an AI-powered Shopify chatbot widget for personalized product recommendations',
       'Optimized Core Web Vitals from ~60% to ~90%, earning the "Built for Shopify" badge in under 2 months',
       'Boosted NRR from 75% to ~85% through stable feature delivery and UX improvements',
     ],
     color: 'cyan',
-    current: true,
     logo: '/logos/partnerz.png',
   },
   {
@@ -40,9 +42,11 @@ export const experiences: Experience[] = [
     company: 'Avicenna Research',
     website: 'https://avicennaresearch.com',
     role: 'Senior Front-end Developer',
-    location: 'Toronto, Canada · Remote',
-    period: 'May 2023 – Jul 2025',
-    type: 'Full-time',
+    location: 'Toronto, Canada',
+    start: new Date('2023-05-01'),
+    end: new Date('2025-07-01'),
+    employmentType: 'Full-time',
+    locationType: 'Remote',
     highlights: [
       'Expanded a large research platform serving 200+ universities and institutes globally',
       'Reduced bundle size by ~20% (1.5 MB) by replacing 20+ libraries with tested utilities',
@@ -54,12 +58,14 @@ export const experiences: Experience[] = [
   },
   {
     id: 3,
-    company: 'Dorfak Intelligent Systems',
+    company: 'Dorfak Systems',
     website: null,
-    role: 'Front-end Architect & Consultant',
-    location: 'Tehran, Iran · Remote',
-    period: 'Feb 2024 – Mar 2025',
-    type: 'Contract',
+    role: 'Front-end Architect',
+    location: 'Tehran, Iran',
+    start: new Date('2024-10-01'),
+    end: new Date('2025-03-01'),
+    employmentType: 'Contract',
+    locationType: 'Remote',
     highlights: [
       'Designed the architecture and structure of a PWA project from scratch',
       'Set up linters, formatters, CI/CD, pre-commit hooks to enforce quality standards',
@@ -70,12 +76,14 @@ export const experiences: Experience[] = [
   },
   {
     id: 4,
-    company: 'Dorfak Intelligent Systems',
+    company: 'Dorfak Systems',
     website: null,
     role: 'Senior Front-end Developer',
-    location: 'Tehran, Iran · Remote',
-    period: 'Oct 2022 – Apr 2023',
-    type: 'Full-time',
+    location: 'Tehran, Iran',
+    start: new Date('2022-10-01'),
+    end: new Date('2023-04-01'),
+    employmentType: 'Full-time',
+    locationType: 'Remote',
     highlights: [
       'Architected 2 financial web apps for the Iranian stock exchange and crypto markets',
       'Boosted loading speed by ~40% (3 seconds) using IndexedDB for data caching',
@@ -89,9 +97,11 @@ export const experiences: Experience[] = [
     company: 'Zardalu',
     website: 'https://www.zardalu.dev',
     role: 'Front-end Developer',
-    location: 'Tehran, Iran · Hybrid',
-    period: 'Nov 2020 – Sep 2022',
-    type: 'Full-time',
+    location: 'Tehran, Iran',
+    start: new Date('2020-11-01'),
+    end: new Date('2022-09-01'),
+    employmentType: 'Full-time',
+    locationType: 'Hybrid',
     highlights: [
       'Delivered 4 fully-tested enterprise web apps for European organizations',
       'Achieved 85%+ code coverage across all projects with automated testing',
@@ -105,9 +115,11 @@ export const experiences: Experience[] = [
     company: 'Meybod University',
     website: 'https://meybod.ac.ir',
     role: 'Front-end Developing Teacher',
-    location: 'Yazd, Iran · Remote',
-    period: 'Apr 2021 - Sep 2021',
-    type: "Contract",
+    location: 'Yazd, Iran',
+    start: new Date('2021-04-01'),
+    end: new Date('2021-09-01'),
+    employmentType: 'Contract',
+    locationType: 'Remote',
     highlights: [
       'Taught front-end development, related languages, and top technologies in 80 hours and analyzed a project-based approach and a complete roadmap to provide a challenging course',
       'Developed 5 complex mini-projects and a feature-rich Twitter-like website with a responsive design',
@@ -121,9 +133,11 @@ export const experiences: Experience[] = [
     company: 'QuizLab',
     website: null,
     role: 'Front-end Developer',
-    location: 'Hamedan, Iran · On-site',
-    period: 'Feb 2019 – Jul 2020',
-    type: 'Part-time',
+    location: 'Hamedan, Iran',
+    start: new Date('2019-02-01'),
+    end: new Date('2020-07-01'),
+    employmentType: 'Part-time',
+    locationType: 'On-site',
     highlights: [
       'Built lightweight, performance-critical UI components using React and pure JS',
       'Participated in ideation and product design for application features',

@@ -45,6 +45,19 @@ const colorMap = {
   },
 };
 
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+}
+
+function formatDuration(start: Date, end: Date | null): string {
+  const to = end ?? new Date();
+  const months = (to.getFullYear() - start.getFullYear()) * 12 + (to.getMonth() - start.getMonth());
+  if (months < 12) return `${months} mo`;
+  const years = Math.floor(months / 12);
+  const rem = months % 12;
+  return rem > 0 ? `${years} yr ${rem} mo` : `${years} yr`;
+}
+
 export default function Experience() {
   const t = useTranslations('experience');
 
@@ -79,18 +92,15 @@ export default function Experience() {
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
                           <h3 className="text-lg font-bold text-slate-900 dark:text-white font-display">{exp.role}</h3>
-                          {exp.current && (
-                            <span className="px-2 py-0.5 text-xs rounded-full bg-neon-green/10 text-neon-green border border-neon-green/30 font-mono">
-                              {t('present')}
-                            </span>
-                          )}
                         </div>
-                        <span className={`font-semibold mt-1 block ${colors.bullet}`}>
-                          {exp.company}
-                        </span>
-                        <span className={`inline-block mt-1 text-xs px-2 py-0.5 rounded-full border ${colors.badge}`}>
-                          {exp.type}
-                        </span>
+                        <div className="flex items-center gap-2 mt-1">
+                          <span className={`font-semibold ${colors.bullet}`}>
+                            {exp.company}
+                          </span>
+                          <span className={`text-xs px-2 py-0.5 rounded-full border ${colors.badge}`}>
+                            {exp.employmentType}
+                          </span>
+                        </div>
                       </div>
                       {exp.logo && (
                         <div className="shrink-0 w-10 h-10 rounded-lg overflow-hidden bg-white border border-slate-200 dark:border-white/10 p-1 flex items-center justify-center">
@@ -100,13 +110,19 @@ export default function Experience() {
                     </div>
 
                     <div className="flex flex-col gap-2 mb-4 text-sm text-slate-600 dark:text-slate-500">
-                      <div className="flex items-center gap-1">
+                      <div className="flex items-center gap-1 flex-wrap">
                         <Calendar size={13} />
-                        {exp.period}
+                        {formatDate(exp.start)} — {exp.end ? formatDate(exp.end) : t('present')}
+                        <span className="px-2 py-0.5 rounded-full text-xs border bg-slate-100/60 dark:bg-white/5 border-slate-300/50 dark:border-white/10 text-slate-500 dark:text-slate-400 backdrop-blur-sm">
+                          {formatDuration(exp.start, exp.end)}
+                        </span>
                       </div>
                       <div className="flex items-center gap-1">
                         <MapPin size={13} />
                         {exp.location}
+                        <span className="px-2 py-0.5 rounded-full text-xs border bg-slate-100/60 dark:bg-white/5 border-slate-300/50 dark:border-white/10 text-slate-500 dark:text-slate-400 backdrop-blur-sm">
+                          {exp.locationType}
+                        </span>
                       </div>
                     </div>
 
