@@ -46,8 +46,8 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-24 w-full">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-60 sm:pb-44 lg:py-24 w-full">
+        <div className="flex flex-col lg:flex-row items-center gap-20 lg:gap-20">
           {/* Text content */}
           <motion.div
             className="flex-1 flex flex-col gap-6"
@@ -92,7 +92,7 @@ export default function Hero() {
             </motion.p>
 
             {/* CTA Buttons */}
-            <motion.div variants={item} className="flex flex-wrap gap-4">
+            <motion.div variants={item} className="flex flex-wrap gap-4 justify-center lg:justify-start">
               <NeonButton
                 href="/AhmadJafari.pdf"
                 download
@@ -143,7 +143,7 @@ export default function Hero() {
 
             <motion.div
               className="absolute -bottom-4 -left-4 glass neon-border rounded-xl px-4 py-2"
-              animate={{ y: [0, -20, 0] }}
+              animate={{ y: [20, -20, 20] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
               <p className="text-2xl text-center font-bold font-display text-neon-cyan">
@@ -156,7 +156,7 @@ export default function Hero() {
 
             <motion.div
               className="absolute -top-4 -right-4 glass neon-border rounded-xl px-4 py-2"
-              animate={{ y: [0, 20, 0] }}
+              animate={{ y: [-20, 20, -20] }}
               transition={{
                 duration: 3.5,
                 repeat: Infinity,
