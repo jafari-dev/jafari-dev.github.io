@@ -9,7 +9,8 @@ import Contact from '@/components/sections/Contact';
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen bg-slate-50 dark:bg-transparent">
+    <div className="relative min-h-screen">
+      <div className="fixed inset-0 aurora-bg-light pointer-events-none dark:opacity-0" />
       <div className="fixed inset-0 aurora-bg pointer-events-none opacity-0 dark:opacity-100" />
       <Navbar />
       <main>

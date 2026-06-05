@@ -19,7 +19,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="relative py-24">
-      <div className="absolute inset-0 bg-linear-to-b from-transparent via-dark-900/50 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-dark-900/50 to-transparent pointer-events-none opacity-0 dark:opacity-100" />
       <div className="absolute top-1/4 -left-10 w-[32rem] h-[32rem] glow-spot-cyan opacity-25 pointer-events-none" />
       <div className="absolute bottom-1/4 -right-10 w-[32rem] h-[32rem] glow-spot-purple opacity-25 pointer-events-none" />
       <div className="absolute bottom-0 left-1/3 w-[26rem] h-[26rem] glow-spot-orange opacity-10 pointer-events-none" />

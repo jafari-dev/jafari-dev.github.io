@@ -114,7 +114,7 @@ export default function Contact() {
   return (
     <section id="contact" className="relative py-24">
       {/* Background */}
-      <div className="absolute inset-0 bg-linear-to-t from-dark-900/30 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-t from-dark-900/30 to-transparent pointer-events-none opacity-0 dark:opacity-100" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] glow-spot-cyan opacity-20 pointer-events-none" />
       <div className="absolute top-1/4 -left-20 w-80 h-80 glow-spot-purple opacity-15 pointer-events-none" />
       <div className="absolute top-1/2 -right-20 w-80 h-80 glow-spot-pink opacity-10 pointer-events-none" />

@@ -45,7 +45,10 @@ html:not(.dark) {
     scroll-behavior: smooth;
   }
 
-  html:not(.dark) { color-scheme: light; }
+  html:not(.dark) {
+    color-scheme: light;
+    background-color: #f8fafc;
+  }
   html.dark {
     color-scheme: dark;
     background-color: #020209;
@@ -78,8 +81,9 @@ html:not(.dark) {
     border-radius: 4px;
   }
 
-  .light ::-webkit-scrollbar-track { background: #e2e8f0; }
-  .light ::-webkit-scrollbar-thumb { background: #0891b2; }
+  html:not(.dark) ::-webkit-scrollbar-track { background: #e2e8f0; }
+  html:not(.dark) ::-webkit-scrollbar-thumb { background: #0891b2; border-radius: 9999px; }
+  html:not(.dark) ::selection { background: rgb(14 116 144 / 20%); color: #0f172a; }
 }
 
 /* ─── Utilities ───────────────────────────────────────────────────────── */
@@ -124,6 +128,11 @@ html:not(.dark) {
       linear-gradient(90deg, rgb(0 212 255 / 5%) 1px, transparent 1px);
     background-size: 50px 50px;
   }
+  html:not(.dark) .grid-bg {
+    background-image:
+      linear-gradient(rgb(148 163 184 / 25%) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(148 163 184 / 25%) 1px, transparent 1px);
+  }
 
   /* Radial glow spot */
   .glow-spot-cyan {
@@ -142,6 +151,13 @@ html:not(.dark) {
     background: radial-gradient(ellipse at center, rgb(251 146 60 / 14%) 0%, transparent 70%);
   }
 
+  /* Hide glow spots in light mode — they look like colored smudges on white */
+  html:not(.dark) .glow-spot-cyan,
+  html:not(.dark) .glow-spot-purple,
+  html:not(.dark) .glow-spot-pink,
+  html:not(.dark) .glow-spot-green,
+  html:not(.dark) .glow-spot-orange { display: none; }
+
   /* Full-viewport aurora — 5 soft radial blobs, fixed to viewport while page scrolls */
   .aurora-bg {
     background-image:
@@ -153,12 +169,24 @@ html:not(.dark) {
     background-attachment: fixed;
   }
 
+  /* Light-mode aurora — same positions, using the accessible neon palette */
+  .aurora-bg-light {
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgb(14 116 144 / 12%)  0%, transparent 65%),
+      radial-gradient(ellipse at 82%  8%, rgb(109 40 217 / 10%)  0%, transparent 60%),
+      radial-gradient(ellipse at 50% 58%, rgb(157 23 77  /  6%)  0%, transparent 55%),
+      radial-gradient(ellipse at 6%  85%, rgb(109 40 217 /  8%)  0%, transparent 60%),
+      radial-gradient(ellipse at 90% 92%, rgb(14 116 144 /  8%)  0%, transparent 55%);
+    background-attachment: fixed;
+  }
+
   /* Glass card — light default, dark override via .dark parent */
   .glass {
-    background: rgb(255 255 255 / 80%);
+    background: rgb(255 255 255 / 88%);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgb(0 0 0 / 8%);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 6%), 0 8px 32px rgb(0 0 0 / 4%);
   }
   .dark .glass {
     background: rgb(10 10 26 / 60%);

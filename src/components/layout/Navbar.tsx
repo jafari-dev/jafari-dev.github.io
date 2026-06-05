@@ -108,7 +108,7 @@ export default function Navbar() {
             exit={{ opacity: 0 }}
           >
             <div
-              className="absolute inset-0 bg-slate-900/70 dark:bg-dark-950/90 backdrop-blur-xl"
+              className="absolute inset-0 bg-white/70 dark:bg-dark-950/90 backdrop-blur-xl"
               onClick={() => setMenuOpen(false)}
             />
             <motion.nav
