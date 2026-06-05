@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import SectionTitle from '@/components/ui/SectionTitle';
@@ -14,28 +14,24 @@ const stats = [
 
 export default function About() {
   const t = useTranslations('about');
-  const locale = useLocale();
-  const isRTL = locale === 'fa';
 
   return (
     <section id="about" className="relative py-24 overflow-hidden">
-      {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] glow-spot-purple opacity-20 pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         <SectionTitle title={t('title')} subtitle={t('subtitle')} />
 
-        <div className={`flex flex-col lg:flex-row items-center gap-16 ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
-          {/* Image column */}
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          {/* Image */}
           <motion.div
             className="relative flex-shrink-0"
-            initial={{ opacity: 0, x: isRTL ? 40 : -40 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.7 }}
           >
             <div className="relative w-64 h-64 sm:w-72 sm:h-72">
-              {/* Neon corner accents */}
               <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-neon-cyan rounded-tl-lg" />
               <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-neon-purple rounded-tr-lg" />
               <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-neon-purple rounded-bl-lg" />
@@ -49,13 +45,12 @@ export default function About() {
                   height={288}
                   className="w-full h-full object-cover"
                 />
-                {/* Overlay tint */}
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-950/60 to-transparent" />
               </div>
             </div>
           </motion.div>
 
-          {/* Text column */}
+          {/* Text */}
           <div className="flex-1">
             <motion.div
               className="space-y-4 mb-8"
@@ -64,15 +59,10 @@ export default function About() {
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-                {t('description')}
-              </p>
-              <p className="text-slate-400 text-base leading-relaxed">
-                {t('description2')}
-              </p>
+              <p className="text-slate-300 text-base sm:text-lg leading-relaxed">{t('description')}</p>
+              <p className="text-slate-400 text-base leading-relaxed">{t('description2')}</p>
             </motion.div>
 
-            {/* Stats grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {stats.map(({ key, value, color }, i) => (
                 <motion.div
@@ -84,9 +74,7 @@ export default function About() {
                   transition={{ duration: 0.5, delay: 0.1 * i }}
                   whileHover={{ scale: 1.05, y: -3 }}
                 >
-                  <p className={`text-2xl sm:text-3xl font-bold font-display ${color}`}>
-                    {value}
-                  </p>
+                  <p className={`text-2xl sm:text-3xl font-bold font-display ${color}`}>{value}</p>
                   <p className="text-xs text-slate-500 mt-1 font-medium">{t(key)}</p>
                 </motion.div>
               ))}

@@ -5,8 +5,7 @@
     "skills": "Skills",
     "experience": "Experience",
     "contact": "Contact",
-    "toggle_theme": "Toggle theme",
-    "toggle_language": "Switch to Persian"
+    "toggle_theme": "Toggle theme"
   },
   "hero": {
     "greeting": "Hello, I'm",

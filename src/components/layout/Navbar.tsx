@@ -1,23 +1,19 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sun, Moon, Menu, X, Globe } from 'lucide-react';
-import { useRouter, usePathname } from '@/i18n/navigation';
+import { Sun, Moon, Menu, X } from 'lucide-react';
 
 const NAV_ITEMS = ['about', 'skills', 'experience', 'contact'] as const;
 
 export default function Navbar() {
   const t = useTranslations('nav');
-  const locale = useLocale();
   const { theme, setTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const router = useRouter();
-  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
@@ -28,16 +24,8 @@ export default function Navbar() {
 
   const scrollTo = (id: string) => {
     setMenuOpen(false);
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
-
-  const switchLocale = () => {
-    const next = locale === 'en' ? 'fa' : 'en';
-    router.replace(pathname, { locale: next });
-  };
-
-  const isDark = theme === 'dark';
 
   return (
     <>
@@ -85,27 +73,16 @@ export default function Navbar() {
 
           {/* Controls */}
           <div className="flex items-center gap-2">
-            {/* Language toggle */}
-            <motion.button
-              onClick={switchLocale}
-              title={t('toggle_language')}
-              className="p-2 rounded-lg text-slate-400 hover:text-neon-cyan hover:bg-neon-cyan/10 transition-all duration-200 cursor-pointer"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Globe size={18} />
-            </motion.button>
-
             {/* Theme toggle */}
             {mounted && (
               <motion.button
-                onClick={() => setTheme(isDark ? 'light' : 'dark')}
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                 title={t('toggle_theme')}
                 className="p-2 rounded-lg text-slate-400 hover:text-neon-cyan hover:bg-neon-cyan/10 transition-all duration-200 cursor-pointer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                {isDark ? <Sun size={18} /> : <Moon size={18} />}
+                {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
               </motion.button>
             )}
 

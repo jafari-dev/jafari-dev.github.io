@@ -1,10 +1,9 @@
 'use client';
 
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { skillCategories } from '@/data/portfolio';
-import type { Locale } from '@/data/portfolio';
 
 const categoryColors = [
   { border: 'border-neon-cyan/20', text: 'text-neon-cyan', badge: 'bg-neon-cyan/10 border-neon-cyan/30 text-neon-cyan', dot: 'bg-neon-cyan' },
@@ -16,11 +15,9 @@ const categoryColors = [
 
 export default function Skills() {
   const t = useTranslations('skills');
-  const locale = useLocale() as Locale;
 
   return (
     <section id="skills" className="relative py-24">
-      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-900/50 to-transparent pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
@@ -39,15 +36,13 @@ export default function Skills() {
                 transition={{ duration: 0.5, delay: 0.1 * catIdx }}
                 whileHover={{ y: -4 }}
               >
-                {/* Category header */}
                 <div className="flex items-center gap-3 mb-5">
                   <div className={`w-2 h-2 rounded-full ${colors.dot} animate-pulse-glow`} />
                   <h3 className={`font-mono text-sm font-semibold tracking-wider uppercase ${colors.text}`}>
-                    {category.title[locale]}
+                    {category.title}
                   </h3>
                 </div>
 
-                {/* Skills */}
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIdx) => (
                     <motion.span

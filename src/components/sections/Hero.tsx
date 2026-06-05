@@ -1,17 +1,18 @@
 'use client';
 
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Download, ArrowRight, Mail, ChevronDown } from 'lucide-react';
-import { GitHubIcon, LinkedInIcon } from '@/components/ui/Icons';
 import Image from 'next/image';
 import NeonButton from '@/components/ui/NeonButton';
+import { GitHubIcon, LinkedInIcon } from '@/components/ui/Icons';
 import { socialLinks } from '@/data/portfolio';
 
 const container = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.3 } },
 };
+
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 const item = {
   hidden: { opacity: 0, y: 30 },
@@ -20,12 +21,6 @@ const item = {
 
 export default function Hero() {
   const t = useTranslations('hero');
-  const locale = useLocale();
-  const isRTL = locale === 'fa';
-
-  const scrollDown = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <section
@@ -49,7 +44,7 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-24 w-full">
-        <div className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Text content */}
           <motion.div
             className="flex-1 flex flex-col gap-6"
@@ -65,11 +60,9 @@ export default function Hero() {
               </span>
             </motion.div>
 
-            {/* Greeting */}
+            {/* Greeting + Name */}
             <motion.div variants={item}>
-              <p className="text-slate-400 font-mono text-lg mb-2">
-                {t('greeting')}
-              </p>
+              <p className="text-slate-400 font-mono text-lg mb-2">{t('greeting')}</p>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-display leading-tight">
                 <span className="gradient-text">Ahmad</span>
                 <br />
@@ -82,25 +75,17 @@ export default function Hero() {
             <motion.div variants={item}>
               <div className="flex items-center gap-3">
                 <div className="h-px w-8 bg-neon-cyan/60" />
-                <p className="text-neon-cyan font-mono text-lg tracking-wide">
-                  {t('title')}
-                </p>
+                <p className="text-neon-cyan font-mono text-lg tracking-wide">{t('title')}</p>
               </div>
             </motion.div>
 
             {/* Subtitle */}
-            <motion.p
-              variants={item}
-              className="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl"
-            >
+            <motion.p variants={item} className="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl">
               {t('subtitle')}
             </motion.p>
 
             {/* CTA Buttons */}
-            <motion.div
-              variants={item}
-              className={`flex flex-wrap gap-4 ${isRTL ? 'flex-row-reverse' : ''}`}
-            >
+            <motion.div variants={item} className="flex flex-wrap gap-4">
               <NeonButton href="/Resume.md" download variant="primary" size="lg">
                 <Download size={18} />
                 {t('cta_cv')}
@@ -116,10 +101,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Social links */}
-            <motion.div
-              variants={item}
-              className={`flex items-center gap-4 pt-2 ${isRTL ? 'flex-row-reverse' : ''}`}
-            >
+            <motion.div variants={item} className="flex items-center gap-4 pt-2">
               <div className="h-px w-8 bg-slate-700" />
               {[
                 { href: socialLinks.github, icon: <GitHubIcon size={20} />, label: 'GitHub' },
@@ -145,16 +127,13 @@ export default function Hero() {
           {/* Avatar */}
           <motion.div
             className="relative flex-shrink-0"
-            initial={{ opacity: 0, scale: 0.8, x: isRTL ? -40 : 40 }}
+            initial={{ opacity: 0, scale: 0.8, x: 40 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.5, ease: EASE }}
           >
-            {/* Glow ring */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-neon-cyan/20 via-neon-purple/20 to-neon-pink/20 blur-2xl scale-110 animate-pulse-glow" />
 
-            {/* Outer ring */}
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full p-1 bg-gradient-to-br from-neon-cyan via-neon-purple to-neon-pink">
-              {/* Inner ring */}
               <div className="w-full h-full rounded-full p-1 bg-dark-950">
                 <div className="w-full h-full rounded-full overflow-hidden">
                   <Image
@@ -169,9 +148,8 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Floating tech badge */}
             <motion.div
-              className="absolute -bottom-4 -start-4 glass neon-border rounded-xl px-4 py-2"
+              className="absolute -bottom-4 -left-4 glass neon-border rounded-xl px-4 py-2"
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
             >
@@ -179,9 +157,8 @@ export default function Hero() {
               <p className="text-sm text-neon-cyan font-mono font-bold">"Senior FE Engineer"</p>
             </motion.div>
 
-            {/* Floating exp badge */}
             <motion.div
-              className="absolute -top-4 -end-4 glass neon-border rounded-xl px-4 py-2"
+              className="absolute -top-4 -right-4 glass neon-border rounded-xl px-4 py-2"
               animate={{ y: [0, 6, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
             >
@@ -193,7 +170,7 @@ export default function Hero() {
 
         {/* Scroll indicator */}
         <motion.button
-          onClick={scrollDown}
+          onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 hover:text-neon-cyan transition-colors cursor-pointer"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

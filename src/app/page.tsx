@@ -1,21 +1,25 @@
-'use client';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import Hero from '@/components/sections/Hero';
+import About from '@/components/sections/About';
+import Skills from '@/components/sections/Skills';
+import Experience from '@/components/sections/Experience';
+import Education from '@/components/sections/Education';
+import Contact from '@/components/sections/Contact';
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-
-export default function RootPage() {
-  const router = useRouter();
-
-  useEffect(() => {
-    router.replace('/en');
-  }, [router]);
-
+export default function HomePage() {
   return (
-    <html lang="en">
-      <head>
-        <meta httpEquiv="refresh" content="0;url=/en" />
-      </head>
-      <body style={{ background: '#020209' }} />
-    </html>
+    <div className="min-h-screen bg-slate-50 dark:bg-dark-950">
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Education />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   );
 }

@@ -1,45 +1,39 @@
 'use client';
 
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { MapPin, Calendar, ExternalLink } from 'lucide-react';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { experiences } from '@/data/portfolio';
-import type { Locale } from '@/data/portfolio';
 
 const colorMap = {
   cyan: {
     border: 'border-neon-cyan/20 hover:border-neon-cyan/50',
     dot: 'bg-neon-cyan shadow-[0_0_10px_#00d4ff]',
-    line: 'bg-neon-cyan/30',
     badge: 'bg-neon-cyan/10 text-neon-cyan border-neon-cyan/30',
     bullet: 'text-neon-cyan',
   },
   purple: {
     border: 'border-neon-purple/20 hover:border-neon-purple/50',
     dot: 'bg-neon-purple shadow-[0_0_10px_#a855f7]',
-    line: 'bg-neon-purple/30',
     badge: 'bg-neon-purple/10 text-neon-purple border-neon-purple/30',
     bullet: 'text-neon-purple',
   },
   green: {
     border: 'border-neon-green/20 hover:border-neon-green/50',
     dot: 'bg-neon-green shadow-[0_0_10px_#00ff88]',
-    line: 'bg-neon-green/30',
     badge: 'bg-neon-green/10 text-neon-green border-neon-green/30',
     bullet: 'text-neon-green',
   },
   pink: {
     border: 'border-neon-pink/20 hover:border-neon-pink/50',
     dot: 'bg-neon-pink shadow-[0_0_10px_#f472b6]',
-    line: 'bg-neon-pink/30',
     badge: 'bg-neon-pink/10 text-neon-pink border-neon-pink/30',
     bullet: 'text-neon-pink',
   },
   orange: {
     border: 'border-neon-orange/20 hover:border-neon-orange/50',
     dot: 'bg-neon-orange shadow-[0_0_10px_#fb923c]',
-    line: 'bg-neon-orange/30',
     badge: 'bg-neon-orange/10 text-neon-orange border-neon-orange/30',
     bullet: 'text-neon-orange',
   },
@@ -47,7 +41,6 @@ const colorMap = {
 
 export default function Experience() {
   const t = useTranslations('experience');
-  const locale = useLocale() as Locale;
 
   return (
     <section id="experience" className="relative py-24">
@@ -57,7 +50,6 @@ export default function Experience() {
         <SectionTitle title={t('title')} subtitle={t('subtitle')} />
 
         <div className="relative">
-          {/* Vertical timeline line */}
           <div className="absolute start-6 sm:start-8 top-0 bottom-0 w-px bg-gradient-to-b from-neon-cyan/40 via-neon-purple/20 to-transparent" />
 
           <div className="space-y-8">
@@ -72,23 +64,18 @@ export default function Experience() {
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ duration: 0.6, delay: 0.1 * i }}
                 >
-                  {/* Timeline dot */}
                   <div className="relative flex-shrink-0 w-12 sm:w-16 flex justify-center">
                     <div className={`w-4 h-4 rounded-full border-2 border-dark-950 mt-5 ${colors.dot} z-10`} />
                   </div>
 
-                  {/* Card */}
                   <motion.div
                     className={`flex-1 glass rounded-2xl p-6 border transition-all duration-300 ${colors.border} mb-2`}
                     whileHover={{ x: 4 }}
                   >
-                    {/* Header */}
                     <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                       <div>
                         <div className="flex items-center gap-2 flex-wrap">
-                          <h3 className="text-lg font-bold text-white font-display">
-                            {exp.role[locale]}
-                          </h3>
+                          <h3 className="text-lg font-bold text-white font-display">{exp.role}</h3>
                           {exp.current && (
                             <span className="px-2 py-0.5 text-xs rounded-full bg-neon-green/10 text-neon-green border border-neon-green/30 font-mono">
                               {t('present')}
@@ -106,27 +93,25 @@ export default function Experience() {
                             {exp.website !== '#' && <ExternalLink size={12} />}
                           </a>
                           <span className={`text-xs px-2 py-0.5 rounded-full border ${colors.badge} ms-2`}>
-                            {exp.type[locale]}
+                            {exp.type}
                           </span>
                         </div>
                       </div>
                     </div>
 
-                    {/* Meta */}
                     <div className="flex flex-wrap gap-4 mb-4 text-sm text-slate-500">
                       <span className="flex items-center gap-1">
                         <Calendar size={13} />
-                        {exp.period[locale]}
+                        {exp.period}
                       </span>
                       <span className="flex items-center gap-1">
                         <MapPin size={13} />
-                        {exp.location[locale]}
+                        {exp.location}
                       </span>
                     </div>
 
-                    {/* Highlights */}
                     <ul className="space-y-2">
-                      {exp.highlights[locale].map((highlight, j) => (
+                      {exp.highlights.map((highlight, j) => (
                         <motion.li
                           key={j}
                           className="flex items-start gap-2 text-sm text-slate-400"
