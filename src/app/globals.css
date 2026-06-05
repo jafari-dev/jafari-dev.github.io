@@ -26,6 +26,12 @@
   --duration-fast: 150ms;
   --duration-normal: 300ms;
   --duration-slow: 600ms;
+
+
+  --breakpoint-sm: 468px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
 }
 
 /* ─── Light-mode: accessible neon color overrides ────────────────────── */

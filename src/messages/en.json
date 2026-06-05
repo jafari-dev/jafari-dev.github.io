@@ -21,14 +21,14 @@
     "subtitle": "Who I Am",
     "description": "Front-end Engineer with 7+ years of experience designing and building high-performance web applications. Experienced in developing scalable and maintainable codebases using TypeScript, React, and NextJS. Skilled in designing and executing unit and end-to-end tests to ensure application reliability. Leveraged AI-assisted tools to streamline development workflows and enhance code quality. Applied robust architectures and software design principles to deliver reliable, efficient, and user-focused solutions in real-world projects.",
     "description2": "Currently working as a Full-Stack Engineer at Partnerz (Dubai), I've contributed to products serving 200+ universities globally and a mental health study with 20,000+ participants.",
-    "stat_loc": "Lines of Code",
-    "stat_commits": "Git Commits",
+    "stat_so": "Unread Bookmarks",
+    "stat_duck": "Rubber Duck Sessions",
     "stat_coffee": "Cups of Coffee",
-    "stat_bugs": "Bugs Squashed",
-    "stat_prs": "Pull Requests Merged",
-    "stat_side": "Side Projects",
-    "stat_learning": "Days a Year Learning",
-    "stat_passion": "Passion for Clean Code"
+    "stat_ctrlz": "Ctrl+Z Presses",
+    "stat_tabs": "Tabs Open Right Now",
+    "stat_side": "Abandoned Side Projects",
+    "stat_learning": "Days Without Learning",
+    "stat_passion": "Code OCD"
   },
   "skills": {
     "title": "Tech Stack",

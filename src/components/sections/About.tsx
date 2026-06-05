@@ -5,13 +5,13 @@ import { motion } from 'framer-motion';
 import SectionTitle from '@/components/ui/SectionTitle';
 
 const stats = [
-  { key: 'stat_loc',      value: '1M+',  color: 'text-neon-cyan',    glow: 'via-neon-cyan/60',    spot: 'bg-neon-cyan/10'    },
-  { key: 'stat_commits',  value: '12k+', color: 'text-neon-purple',  glow: 'via-neon-purple/60',  spot: 'bg-neon-purple/10'  },
+  { key: 'stat_so',       value: '296', color: 'text-neon-cyan',    glow: 'via-neon-cyan/60',    spot: 'bg-neon-cyan/10'    },
+  { key: 'stat_duck',     value: '100+',  color: 'text-neon-purple',  glow: 'via-neon-purple/60',  spot: 'bg-neon-purple/10'  },
   { key: 'stat_coffee',   value: '4k+',  color: 'text-neon-green',   glow: 'via-neon-green/60',   spot: 'bg-neon-green/10'   },
-  { key: 'stat_bugs',     value: '2k+',  color: 'text-neon-pink',    glow: 'via-neon-pink/60',    spot: 'bg-neon-pink/10'    },
-  { key: 'stat_prs',      value: '500+', color: 'text-neon-orange',  glow: 'via-neon-orange/60',  spot: 'bg-neon-orange/10'  },
-  { key: 'stat_side',     value: '50+',  color: 'text-neon-cyan',    glow: 'via-neon-cyan/60',    spot: 'bg-neon-cyan/10'    },
-  { key: 'stat_learning', value: '365',  color: 'text-neon-purple',  glow: 'via-neon-purple/60',  spot: 'bg-neon-purple/10'  },
+  { key: 'stat_tabs',     value: '37',   color: 'text-neon-orange',  glow: 'via-neon-orange/60',  spot: 'bg-neon-orange/10'  },
+  { key: 'stat_ctrlz',    value: '∞',    color: 'text-neon-pink',    glow: 'via-neon-pink/60',    spot: 'bg-neon-pink/10'    },
+  { key: 'stat_side',     value: '80+',  color: 'text-neon-cyan',    glow: 'via-neon-cyan/60',    spot: 'bg-neon-cyan/10'    },
+  { key: 'stat_learning', value: '0',    color: 'text-neon-purple',  glow: 'via-neon-purple/60',  spot: 'bg-neon-purple/10'  },
   { key: 'stat_passion',  value: '∞',    color: 'text-neon-green',   glow: 'via-neon-green/60',   spot: 'bg-neon-green/10'   },
 ];
 
@@ -38,11 +38,11 @@ export default function About() {
             <p className="text-slate-700 dark:text-slate-300 text-base text-justify sm:text-lg leading-relaxed">{t('description')}</p>
           </motion.div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-4xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full max-w-4xl">
             {stats.map(({ key, value, color, glow, spot }, i) => (
               <motion.div
                 key={key}
-                className="glass neon-border rounded-xl p-4 text-center relative overflow-hidden"
+                className="glass neon-border rounded-xl p-4 text-center relative overflow-hidden min-w-[200px]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
