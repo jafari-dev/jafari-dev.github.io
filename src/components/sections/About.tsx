@@ -25,7 +25,7 @@ export default function About() {
         <div className="flex flex-col lg:flex-row items-center gap-16">
           {/* Image */}
           <motion.div
-            className="relative flex-shrink-0"
+            className="relative shrink-0"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
@@ -45,7 +45,7 @@ export default function About() {
                   height={288}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 dark:from-dark-950/60 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-slate-900/40 dark:from-dark-950/60 to-transparent" />
               </div>
             </div>
           </motion.div>

@@ -24,10 +24,9 @@ export default function SectionTitle({ title, subtitle, align = 'center' }: Sect
       </span>
       <h2 className="text-3xl md:text-4xl font-bold font-display text-slate-900 dark:text-white">
         {title}
-        <span className="text-neon-cyan neon-text-cyan">.</span>
       </h2>
       <motion.div
-        className="h-px w-16 bg-gradient-to-r from-neon-cyan to-neon-purple"
+        className="h-px w-16 bg-linear-to-r from-neon-cyan to-neon-purple"
         initial={{ width: 0 }}
         whileInView={{ width: 64 }}
         viewport={{ once: true }}

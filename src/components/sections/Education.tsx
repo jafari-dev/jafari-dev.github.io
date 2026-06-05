@@ -10,7 +10,7 @@ export default function Education() {
 
   return (
     <section className="relative py-16">
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
+      <div className="relative z-10 max-w-4xl mx-auto px-2 sm:px-6">
         <SectionTitle title={t('title')} subtitle={t('subtitle')} />
 
         <motion.div
@@ -25,7 +25,7 @@ export default function Education() {
             <div className="absolute inset-0 glow-spot-purple opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none" />
 
             <div className="flex items-start gap-5">
-              <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-neon-purple/10 border border-neon-purple/30 flex items-center justify-center">
+              <div className="shrink-0 w-14 h-14 rounded-xl bg-neon-purple/10 border border-neon-purple/30 flex items-center justify-center">
                 <GraduationCap size={28} className="text-neon-purple" />
               </div>
 

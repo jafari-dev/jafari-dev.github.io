@@ -37,7 +37,7 @@ export default function Hero() {
       {/* Scan line effect */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute w-full h-px bg-gradient-to-r from-transparent via-neon-cyan/20 to-transparent"
+          className="absolute w-full h-px bg-linear-to-r from-transparent via-neon-cyan/20 to-transparent"
           animate={{ top: ['0%', '100%'] }}
           transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
         />
@@ -123,14 +123,14 @@ export default function Hero() {
 
           {/* Avatar */}
           <motion.div
-            className="relative flex-shrink-0"
+            className="relative shrink-0"
             initial={{ opacity: 0, scale: 0.8, x: 40 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.5, ease: EASE }}
           >
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-neon-cyan/20 via-neon-purple/20 to-neon-pink/20 blur-2xl scale-110 animate-pulse-glow" />
+            <div className="absolute inset-0 rounded-full bg-linear-to-br from-neon-cyan/20 via-neon-purple/20 to-neon-pink/20 blur-2xl scale-110 animate-pulse-glow" />
 
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full p-1 bg-gradient-to-br from-neon-cyan via-neon-purple to-neon-pink">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full p-1 bg-linear-to-br from-neon-cyan via-neon-purple to-neon-pink">
               <div className="w-full h-full rounded-full p-1 bg-dark-950">
                 <div className="w-full h-full rounded-full overflow-hidden">
                   <Image

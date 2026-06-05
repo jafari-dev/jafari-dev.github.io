@@ -18,7 +18,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="relative py-24">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-900/50 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-dark-900/50 to-transparent pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         <SectionTitle title={t('title')} subtitle={t('subtitle')} />
@@ -29,11 +29,11 @@ export default function Skills() {
             return (
               <motion.div
                 key={catIdx}
-                className={`glass rounded-2xl p-6 border ${colors.border} group hover:border-opacity-60 transition-all duration-300`}
+                className={`glass rounded-2xl p-6 border ${colors.border} group hover:border-opacity-60 transition-colors duration-300`}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.1 * catIdx } }}
                 viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.5, delay: 0.1 * catIdx }}
+                transition={{ duration: 0.2 }}
                 whileHover={{ y: -4 }}
               >
                 <div className="flex items-center gap-3 mb-5">

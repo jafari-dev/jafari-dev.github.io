@@ -81,10 +81,10 @@ export default function Contact() {
   return (
     <section id="contact" className="relative py-24">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-t from-dark-900/30 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-t from-dark-900/30 to-transparent pointer-events-none" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] glow-spot-cyan opacity-15 pointer-events-none" />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
+      <div className="relative z-10 max-w-4xl mx-auto px-2 sm:px-6">
         <SectionTitle title={t('title')} subtitle={t('subtitle')} />
 
         <motion.p
@@ -101,16 +101,16 @@ export default function Contact() {
           {contactItems.map((item, i) => (
             <motion.div
               key={item.label}
-              className={`glass rounded-2xl p-5 border transition-all duration-300 ${item.border} group`}
+              className={`glass rounded-2xl p-5 border transition-colors duration-300 ${item.border} group`}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.1 * i } }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 * i }}
+              transition={{ duration: 0.2 }}
               whileHover={{ y: -3 }}
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
-                  <div className={`w-11 h-11 rounded-xl ${item.bg} border ${item.border} flex items-center justify-center ${item.color} flex-shrink-0`}>
+                  <div className={`w-11 h-11 rounded-xl ${item.bg} border ${item.border} flex items-center justify-center ${item.color} shrink-0`}>
                     {item.icon}
                   </div>
                   <div>

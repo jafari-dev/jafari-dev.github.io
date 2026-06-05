@@ -65,7 +65,6 @@ export default function Navbar() {
                 transition={{ delay: 0.1 * i }}
                 whileHover={{ y: -1 }}
               >
-                <span className="text-neon-cyan/50 font-mono text-xs me-1">0{i + 1}.</span>
                 {t(item)}
               </motion.button>
             ))}
@@ -128,7 +127,6 @@ export default function Navbar() {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.05 * i }}
                 >
-                  <span className="text-neon-cyan/50 font-mono text-xs me-2">0{i + 1}.</span>
                   {t(item)}
                 </motion.button>
               ))}
