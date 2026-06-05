@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "theme": "dark-ansi",
+  "effortLevel": "high",
+  "permissions": {
+    "allow": [
+      "Read",
+      "Grep",
+      "Glob",
+      "Bash",
+      "Edit",
+      "Write",
+      "LSP",
+      "TaskGet",
+      "TaskList",
+      "WebSearch",
+      "Bash(git status *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(git diff *)",
+      "Bash(git mv *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(ls *)",
+      "Bash(mkdir *)",
+      "Bash(touch *)",
+      "Bash(cat *)",
+      "Bash(echo *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(find *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(* --version)",
+      "Bash(* --help *)"
+    ],
+    "ask": [
+      "WebFetch",
+      "Bash(wget *)",
+      "Bash(curl *)",
+      "Bash(chmod *)",
+      "Bash(chown *)",
+      "Bash(rm *)",
+      "Bash(git rm *)"
+    ],
+    "deny": [
+      "Read(/.env)",
+      "Read(/build)",
+      "Read(/.cursor)",
+      "Read(/dist)",
+      "Read(/.shopify)",
+      "Bash(sudo *)",
+      "Bash(git push * -f *)",
+      "Bash(git push * --force *)",
+      "Bash(git reset --hard *)",
+      "Bash(git clean *)",
+      "Bash(git branch -D *)",
+      "Bash(git * --no-verify *)"
+    ]
+  }
+}
