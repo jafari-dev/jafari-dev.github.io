@@ -10,7 +10,7 @@
   "hero": {
     "greeting": "Hello, I'm",
     "title": "Software Engineer",
-    "subtitle": "I build high-performance web applications with modern tech stacks. Specializing in React, Next.js, and TypeScript with a focus on architecture and user experience.",
+    "subtitle": "I craft fast, scalable web applications — turning complex problems into clean, reliable products people enjoy using.",
     "cta_cv": "Download CV",
     "cta_contact": "Get in Touch",
     "scroll": "Scroll Down",
@@ -21,10 +21,14 @@
     "subtitle": "Who I Am",
     "description": "Front-end Engineer with 7+ years of experience designing and building high-performance web applications. Experienced in developing scalable and maintainable codebases using TypeScript, React, and NextJS. Skilled in designing and executing unit and end-to-end tests to ensure application reliability. Leveraged AI-assisted tools to streamline development workflows and enhance code quality. Applied robust architectures and software design principles to deliver reliable, efficient, and user-focused solutions in real-world projects.",
     "description2": "Currently working as a Full-Stack Engineer at Partnerz (Dubai), I've contributed to products serving 200+ universities globally and a mental health study with 20,000+ participants.",
-    "stat_years": "Years Experience",
-    "stat_clients": "University Clients",
-    "stat_participants": "Research Participants",
-    "stat_coverage": "Test Coverage"
+    "stat_loc": "Lines of Code",
+    "stat_commits": "Git Commits",
+    "stat_coffee": "Cups of Coffee",
+    "stat_bugs": "Bugs Squashed",
+    "stat_prs": "Pull Requests Merged",
+    "stat_side": "Side Projects",
+    "stat_learning": "Days a Year Learning",
+    "stat_passion": "Passion for Clean Code"
   },
   "skills": {
     "title": "Tech Stack",

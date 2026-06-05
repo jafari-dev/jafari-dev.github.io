@@ -2,14 +2,17 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import SectionTitle from '@/components/ui/SectionTitle';
 
 const stats = [
-  { key: 'stat_years', value: '7+', color: 'text-neon-cyan' },
-  { key: 'stat_clients', value: '200+', color: 'text-neon-purple' },
-  { key: 'stat_participants', value: '20k+', color: 'text-neon-green' },
-  { key: 'stat_coverage', value: '85%+', color: 'text-neon-pink' },
+  { key: 'stat_loc', value: '1M+', color: 'text-neon-cyan' },
+  { key: 'stat_commits', value: '12k+', color: 'text-neon-purple' },
+  { key: 'stat_coffee', value: '4k+', color: 'text-neon-green' },
+  { key: 'stat_bugs', value: '2k+', color: 'text-neon-pink' },
+  { key: 'stat_prs', value: '500+', color: 'text-neon-orange' },
+  { key: 'stat_side', value: '50+', color: 'text-neon-cyan' },
+  { key: 'stat_learning', value: '365', color: 'text-neon-purple' },
+  { key: 'stat_passion', value: '∞', color: 'text-neon-green' },
 ] as const;
 
 export default function About() {
@@ -22,62 +25,32 @@ export default function About() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
         <SectionTitle title={t('title')} subtitle={t('subtitle')} />
 
-        <div className="flex flex-col lg:flex-row items-center gap-16">
-          {/* Image */}
+        <div className="flex flex-col items-center">
           <motion.div
-            className="relative shrink-0"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="max-w-3xl mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="relative w-64 h-64 sm:w-72 sm:h-72">
-              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-neon-cyan rounded-tl-lg" />
-              <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-neon-purple rounded-tr-lg" />
-              <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-neon-purple rounded-bl-lg" />
-              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-neon-cyan rounded-br-lg" />
-
-              <div className="absolute inset-3 rounded-xl overflow-hidden border border-neon-cyan/20">
-                <Image
-                  src="/avatar.jpg"
-                  alt="Ahmad Jafari"
-                  width={288}
-                  height={288}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-slate-900/40 dark:from-dark-950/60 to-transparent" />
-              </div>
-            </div>
+            <p className="text-slate-700 dark:text-slate-300 text-base text-justify sm:text-lg leading-relaxed">{t('description')}</p>
           </motion.div>
 
-          {/* Text */}
-          <div className="flex-1">
-            <motion.div
-              className="space-y-4 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <p className="text-slate-700 dark:text-slate-300 text-base text-justify sm:text-lg leading-relaxed">{t('description')}</p>
-            </motion.div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {stats.map(({ key, value, color }, i) => (
-                <motion.div
-                  key={key}
-                  className="glass neon-border rounded-xl p-4 text-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 * i }}
-                  whileHover={{ scale: 1.05, y: -3 }}
-                >
-                  <p className={`text-2xl sm:text-3xl font-bold font-display ${color}`}>{value}</p>
-                  <p className="text-xs text-slate-600 dark:text-slate-500 mt-1 font-medium">{t(key)}</p>
-                </motion.div>
-              ))}
-            </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-4xl">
+            {stats.map(({ key, value, color }, i) => (
+              <motion.div
+                key={key}
+                className="glass neon-border rounded-xl p-4 text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 * i }}
+                whileHover={{ scale: 1.05, y: -3 }}
+              >
+                <p className={`text-2xl sm:text-3xl font-bold font-display ${color}`}>{value}</p>
+                <p className="text-xs text-slate-600 dark:text-slate-500 mt-1 font-medium">{t(key)}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
