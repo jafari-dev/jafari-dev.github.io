@@ -10,6 +10,9 @@ export default function Education() {
 
   return (
     <section className="relative py-16">
+      <div className="absolute top-1/3 -left-10 w-[28rem] h-[28rem] glow-spot-purple opacity-20 pointer-events-none" />
+      <div className="absolute bottom-0 -right-10 w-[24rem] h-[24rem] glow-spot-cyan opacity-15 pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[30rem] h-[20rem] glow-spot-pink opacity-8 pointer-events-none" />
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
         <SectionTitle title={t('title')} subtitle={t('subtitle')} />
 

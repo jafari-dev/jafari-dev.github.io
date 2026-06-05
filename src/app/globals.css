@@ -46,7 +46,10 @@ html:not(.dark) {
   }
 
   html:not(.dark) { color-scheme: light; }
-  html.dark { color-scheme: dark; }
+  html.dark {
+    color-scheme: dark;
+    background-color: #020209;
+  }
 
   html, body {
     overflow-x: hidden;
@@ -117,17 +120,37 @@ html:not(.dark) {
   /* Cyber grid background */
   .grid-bg {
     background-image:
-      linear-gradient(rgb(0 212 255 / 3%) 1px, transparent 1px),
-      linear-gradient(90deg, rgb(0 212 255 / 3%) 1px, transparent 1px);
+      linear-gradient(rgb(0 212 255 / 5%) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(0 212 255 / 5%) 1px, transparent 1px);
     background-size: 50px 50px;
   }
 
   /* Radial glow spot */
   .glow-spot-cyan {
-    background: radial-gradient(ellipse at center, rgb(0 212 255 / 12%) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgb(0 212 255 / 14%) 0%, transparent 70%);
   }
   .glow-spot-purple {
-    background: radial-gradient(ellipse at center, rgb(168 85 247 / 12%) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgb(168 85 247 / 14%) 0%, transparent 70%);
+  }
+  .glow-spot-pink {
+    background: radial-gradient(ellipse at center, rgb(244 114 182 / 14%) 0%, transparent 70%);
+  }
+  .glow-spot-green {
+    background: radial-gradient(ellipse at center, rgb(0 255 136 / 12%) 0%, transparent 70%);
+  }
+  .glow-spot-orange {
+    background: radial-gradient(ellipse at center, rgb(251 146 60 / 14%) 0%, transparent 70%);
+  }
+
+  /* Full-viewport aurora — 5 soft radial blobs, fixed to viewport while page scrolls */
+  .aurora-bg {
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgb(0 212 255 / 8%)   0%, transparent 65%),
+      radial-gradient(ellipse at 82%  8%, rgb(168 85 247 / 10%) 0%, transparent 60%),
+      radial-gradient(ellipse at 50% 58%, rgb(244 114 182 / 5%) 0%, transparent 55%),
+      radial-gradient(ellipse at 6%  85%, rgb(168 85 247 / 8%)  0%, transparent 60%),
+      radial-gradient(ellipse at 90% 92%, rgb(0 212 255 / 7%)   0%, transparent 55%);
+    background-attachment: fixed;
   }
 
   /* Glass card — light default, dark override via .dark parent */

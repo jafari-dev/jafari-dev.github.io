@@ -68,7 +68,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           }}
         />
       </head>
-      <body className="bg-slate-50 text-slate-800 dark:bg-dark-950 dark:text-slate-200 transition-colors duration-300 antialiased">
+      <body className="bg-slate-50 text-slate-800 dark:bg-transparent dark:text-slate-200 transition-colors duration-300 antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <NextIntlClientProvider messages={messages} locale="en">
             {children}

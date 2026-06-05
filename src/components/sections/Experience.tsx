@@ -73,8 +73,9 @@ export default function Experience() {
 
   return (
     <section id="experience" className="relative py-24">
-      <div className="absolute top-1/3 -left-20 w-96 h-96 glow-spot-purple opacity-10 pointer-events-none" />
-      <div className="absolute bottom-1/3 -right-20 w-96 h-96 glow-spot-cyan opacity-10 pointer-events-none" />
+      <div className="absolute top-1/4 -left-10 w-[32rem] h-[32rem] glow-spot-purple opacity-25 pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-10 w-[32rem] h-[32rem] glow-spot-cyan opacity-25 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[28rem] h-[28rem] glow-spot-pink opacity-10 pointer-events-none" />
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
         <SectionTitle title={t('title')} subtitle={t('subtitle')} />
 
