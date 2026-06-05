@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { MapPin, Calendar, ExternalLink } from 'lucide-react';
+import Image from 'next/image';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { experiences } from '@/data/portfolio';
 
@@ -65,17 +66,17 @@ export default function Experience() {
                   transition={{ duration: 0.6, delay: 0.1 * i }}
                 >
                   <div className="relative flex-shrink-0 w-12 sm:w-16 flex justify-center">
-                    <div className={`w-4 h-4 rounded-full border-2 border-dark-950 mt-5 ${colors.dot} z-10`} />
+                    <div className={`w-4 h-4 rounded-full mt-5 ${colors.dot} z-10`} />
                   </div>
 
                   <motion.div
-                    className={`flex-1 glass rounded-2xl p-6 border transition-all duration-300 ${colors.border} mb-2`}
+                    className={`flex-1 glass rounded-2xl p-6 border transition-all duration-0 ${colors.border} mb-2`}
                     whileHover={{ x: 4 }}
                   >
                     <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
-                      <div>
+                      <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
-                          <h3 className="text-lg font-bold text-white font-display">{exp.role}</h3>
+                          <h3 className="text-lg font-bold text-slate-900 dark:text-white font-display">{exp.role}</h3>
                           {exp.current && (
                             <span className="px-2 py-0.5 text-xs rounded-full bg-neon-green/10 text-neon-green border border-neon-green/30 font-mono">
                               {t('present')}
@@ -84,7 +85,7 @@ export default function Experience() {
                         </div>
                         <div className="flex items-center gap-1 mt-1">
                           <a
-                            href={exp.website !== '#' ? exp.website : undefined}
+                            href={exp.website && exp.website !== '#' ? exp.website : undefined}
                             target="_blank"
                             rel="noopener noreferrer"
                             className={`font-semibold ${colors.bullet} hover:underline flex items-center gap-1`}
@@ -97,9 +98,14 @@ export default function Experience() {
                           </span>
                         </div>
                       </div>
+                      {exp.logo && (
+                        <div className="flex-shrink-0 w-10 h-10 rounded-lg overflow-hidden bg-white border border-slate-200 dark:border-white/10 p-1 flex items-center justify-center">
+                          <Image src={exp.logo} alt={`${exp.company} logo`} width={32} height={32} className="w-full h-full object-contain" />
+                        </div>
+                      )}
                     </div>
 
-                    <div className="flex flex-wrap gap-4 mb-4 text-sm text-slate-500">
+                    <div className="flex flex-wrap gap-4 mb-4 text-sm text-slate-600 dark:text-slate-500">
                       <span className="flex items-center gap-1">
                         <Calendar size={13} />
                         {exp.period}
@@ -114,7 +120,7 @@ export default function Experience() {
                       {exp.highlights.map((highlight, j) => (
                         <motion.li
                           key={j}
-                          className="flex items-start gap-2 text-sm text-slate-400"
+                          className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400"
                           initial={{ opacity: 0 }}
                           whileInView={{ opacity: 1 }}
                           viewport={{ once: true }}

@@ -28,12 +28,25 @@
   --duration-slow: 600ms;
 }
 
+/* ─── Light-mode: accessible neon color overrides ────────────────────── */
+/*     Vivid neon fails WCAG on white (#00d4ff = 1.3:1, #00ff88 = 1.3:1). */
+/*     These darker variants all pass 4.5:1 on white.                      */
+html:not(.dark) {
+  --color-neon-cyan: #0e7490;
+  --color-neon-purple: #6d28d9;
+  --color-neon-green: #047857;
+  --color-neon-pink: #9d174d;
+  --color-neon-orange: #c2410c;
+}
+
 /* ─── Base ────────────────────────────────────────────────────────────── */
 @layer base {
   :root {
     scroll-behavior: smooth;
-    color-scheme: dark;
   }
+
+  html:not(.dark) { color-scheme: light; }
+  html.dark { color-scheme: dark; }
 
   html {
     -webkit-font-smoothing: antialiased;

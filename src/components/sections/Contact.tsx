@@ -88,7 +88,7 @@ export default function Contact() {
         <SectionTitle title={t('title')} subtitle={t('subtitle')} />
 
         <motion.p
-          className="text-center text-slate-400 text-base sm:text-lg mb-12 max-w-xl mx-auto"
+          className="text-center text-slate-600 dark:text-slate-400 text-base sm:text-lg mb-12 max-w-xl mx-auto"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -114,7 +114,7 @@ export default function Contact() {
                     {item.icon}
                   </div>
                   <div>
-                    <p className="text-xs text-slate-500 font-mono mb-0.5">{item.label}</p>
+                    <p className="text-xs text-slate-600 dark:text-slate-500 font-mono mb-0.5">{item.label}</p>
                     {item.href ? (
                       <a
                         href={item.href}
@@ -134,7 +134,7 @@ export default function Contact() {
                 {item.action && (
                   <motion.button
                     onClick={item.action}
-                    className={`p-2 rounded-lg text-slate-500 hover:${item.color} hover:bg-white/5 transition-all duration-200 text-xs flex items-center gap-1`}
+                    className={`p-2 rounded-lg text-slate-600 dark:text-slate-500 hover:${item.color} hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-200 text-xs flex items-center gap-1`}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     title={item.actionLabel}

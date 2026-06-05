@@ -1,14 +1,15 @@
 export interface Experience {
   id: number;
   company: string;
-  website: string;
+  website: string | null;
   role: string;
   location: string;
   period: string;
-  type: string;
+  type: "Full-time" | "Part-time" | "Contract";
   highlights: string[];
   color: 'cyan' | 'purple' | 'green' | 'pink' | 'orange';
   current?: boolean;
+  logo?: string;
 }
 
 export interface SkillCategory {
@@ -32,11 +33,12 @@ export const experiences: Experience[] = [
     ],
     color: 'cyan',
     current: true,
+    logo: '/logos/partnerz.png',
   },
   {
     id: 2,
     company: 'Avicenna Research',
-    website: 'https://avicenna.io',
+    website: 'https://avicennaresearch.com',
     role: 'Senior Front-end Developer',
     location: 'Toronto, Canada · Remote',
     period: 'May 2023 – Jul 2025',
@@ -48,11 +50,12 @@ export const experiences: Experience[] = [
       'Built a Garmin watch app for a mental health study with 20,000+ participants (Univ. of Essex)',
     ],
     color: 'purple',
+    logo: '/logos/avicenna-research.png',
   },
   {
     id: 3,
     company: 'Dorfak Intelligent Systems',
-    website: '#',
+    website: null,
     role: 'Front-end Architect & Consultant',
     location: 'Tehran, Iran · Remote',
     period: 'Feb 2024 – Mar 2025',
@@ -63,11 +66,12 @@ export const experiences: Experience[] = [
       'Onboarded 2 developers to full proficiency in 6 months, enabling independent contribution',
     ],
     color: 'green',
+    logo: '/logos/dorfak-systems.png',
   },
   {
     id: 4,
     company: 'Dorfak Intelligent Systems',
-    website: '#',
+    website: null,
     role: 'Senior Front-end Developer',
     location: 'Tehran, Iran · Remote',
     period: 'Oct 2022 – Apr 2023',
@@ -78,11 +82,12 @@ export const experiences: Experience[] = [
       'Reduced codebase size by ~10% via refactoring and removing legacy dead code',
     ],
     color: 'orange',
+    logo: '/logos/dorfak-systems.png',
   },
   {
     id: 5,
     company: 'Zardalu',
-    website: '#',
+    website: 'https://www.zardalu.dev',
     role: 'Front-end Developer',
     location: 'Tehran, Iran · Hybrid',
     period: 'Nov 2020 – Sep 2022',
@@ -93,11 +98,28 @@ export const experiences: Experience[] = [
       'Refactored an outsourced project from JS to TS, reducing critical errors by ~70%',
     ],
     color: 'pink',
+    logo: '/logos/zardalu.png',
   },
   {
     id: 6,
+    company: 'Meybod University',
+    website: 'https://meybod.ac.ir',
+    role: 'Front-end Developing Teacher',
+    location: 'Yazd, Iran · Remote',
+    period: 'Apr 2021 - Sep 2021',
+    type: "Contract",
+    highlights: [
+      'Taught front-end development, related languages, and top technologies in 80 hours and analyzed a project-based approach and a complete roadmap to provide a challenging course',
+      'Developed 5 complex mini-projects and a feature-rich Twitter-like website with a responsive design',
+      'Guided students on essential soft skills, including task time estimation, cross-team communication and stress management in urgent tasks'
+    ],
+    color: 'cyan',
+    logo: '/logos/meybod-university.png',
+  },
+  {
+    id: 7,
     company: 'QuizLab',
-    website: '#',
+    website: null,
     role: 'Front-end Developer',
     location: 'Hamedan, Iran · On-site',
     period: 'Feb 2019 – Jul 2020',
@@ -106,8 +128,9 @@ export const experiences: Experience[] = [
       'Built lightweight, performance-critical UI components using React and pure JS',
       'Participated in ideation and product design for application features',
     ],
-    color: 'cyan',
+    color: 'purple',
   },
+
 ];
 
 export const skillCategories: SkillCategory[] = [

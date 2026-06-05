@@ -19,7 +19,7 @@ interface NeonButtonProps {
 const variants = {
   primary: 'bg-neon-cyan/10 border border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan/20 hover:border-neon-cyan hover:neon-glow-cyan dark:bg-neon-cyan/10 dark:border-neon-cyan/50 dark:text-neon-cyan dark:hover:bg-neon-cyan/20 dark:hover:border-neon-cyan',
   secondary: 'bg-neon-purple/10 border border-neon-purple/50 text-neon-purple hover:bg-neon-purple/20 hover:border-neon-purple hover:neon-glow-purple dark:bg-neon-purple/10 dark:border-neon-purple/50 dark:text-neon-purple dark:hover:bg-neon-purple/20 dark:hover:border-neon-purple',
-  ghost: 'bg-transparent border border-slate-700 text-slate-300 hover:border-neon-cyan/50 hover:text-neon-cyan dark:border-slate-700 dark:text-slate-300 dark:hover:border-neon-cyan/50 dark:hover:text-neon-cyan',
+  ghost: 'bg-transparent border border-slate-400 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-neon-cyan/50 hover:text-neon-cyan',
 };
 
 const sizes = {

@@ -22,7 +22,7 @@ export default function SectionTitle({ title, subtitle, align = 'center' }: Sect
       <span className="text-sm font-mono text-neon-cyan tracking-widest uppercase">
         {subtitle}
       </span>
-      <h2 className="text-3xl md:text-4xl font-bold font-display text-white dark:text-white">
+      <h2 className="text-3xl md:text-4xl font-bold font-display text-slate-900 dark:text-white">
         {title}
         <span className="text-neon-cyan neon-text-cyan">.</span>
       </h2>

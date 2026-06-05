@@ -62,12 +62,9 @@ export default function Hero() {
 
             {/* Greeting + Name */}
             <motion.div variants={item}>
-              <p className="text-slate-400 font-mono text-lg mb-2">{t('greeting')}</p>
+              <p className="text-slate-600 dark:text-slate-400 font-mono text-lg mb-2">{t('greeting')}</p>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-display leading-tight">
-                <span className="gradient-text">Ahmad</span>
-                <br />
-                <span className="text-white">Jafari</span>
-                <span className="text-neon-cyan neon-text-cyan">_</span>
+                <span className="gradient-text">Ahmad Jafari</span>
               </h1>
             </motion.div>
 
@@ -80,13 +77,13 @@ export default function Hero() {
             </motion.div>
 
             {/* Subtitle */}
-            <motion.p variants={item} className="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl">
+            <motion.p variants={item} className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl">
               {t('subtitle')}
             </motion.p>
 
             {/* CTA Buttons */}
             <motion.div variants={item} className="flex flex-wrap gap-4">
-              <NeonButton href="/Resume.md" download variant="primary" size="lg">
+              <NeonButton href="/AhmadJafari.pdf" download variant="primary" size="lg">
                 <Download size={18} />
                 {t('cta_cv')}
               </NeonButton>
@@ -153,7 +150,7 @@ export default function Hero() {
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
             >
-              <p className="text-xs text-slate-400 font-mono">const role =</p>
+              <p className="text-xs text-slate-600 dark:text-slate-400 font-mono">const role =</p>
               <p className="text-sm text-neon-cyan font-mono font-bold">"Senior FE Engineer"</p>
             </motion.div>
 
@@ -163,7 +160,7 @@ export default function Hero() {
               transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
             >
               <p className="text-2xl font-bold font-display text-neon-purple">7+</p>
-              <p className="text-xs text-slate-400">Years Exp.</p>
+              <p className="text-xs text-slate-600 dark:text-slate-400">Years Exp.</p>
             </motion.div>
           </motion.div>
         </div>
@@ -171,7 +168,7 @@ export default function Hero() {
         {/* Scroll indicator */}
         <motion.button
           onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500 hover:text-neon-cyan transition-colors cursor-pointer"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-600 dark:text-slate-500 hover:text-neon-cyan transition-colors cursor-pointer"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}

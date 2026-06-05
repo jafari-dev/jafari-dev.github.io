@@ -30,12 +30,12 @@ export default function Education() {
               </div>
 
               <div className="flex-1">
-                <h3 className="text-xl font-bold text-white font-display mb-1">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white font-display mb-1">
                   {t('degree')}
                 </h3>
                 <p className="text-neon-purple font-semibold mb-4">{t('university')}</p>
 
-                <div className="flex flex-wrap gap-4 text-sm text-slate-500">
+                <div className="flex flex-wrap gap-4 text-sm text-slate-600 dark:text-slate-500">
                   <span className="flex items-center gap-1.5">
                     <MapPin size={14} className="text-neon-cyan/60" />
                     {t('location')}

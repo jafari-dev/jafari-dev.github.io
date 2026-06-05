@@ -59,7 +59,7 @@ export default function Navbar() {
               <motion.button
                 key={item}
                 onClick={() => scrollTo(item)}
-                className="px-4 py-2 text-sm font-medium text-slate-400 hover:text-neon-cyan transition-colors duration-200 rounded-lg hover:bg-neon-cyan/5 cursor-pointer"
+                className="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-neon-cyan transition-colors duration-200 rounded-lg hover:bg-neon-cyan/5 cursor-pointer"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * i }}
@@ -78,7 +78,7 @@ export default function Navbar() {
               <motion.button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                 title={t('toggle_theme')}
-                className="p-2 rounded-lg text-slate-400 hover:text-neon-cyan hover:bg-neon-cyan/10 transition-all duration-200 cursor-pointer"
+                className="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-neon-cyan hover:bg-neon-cyan/10 transition-all duration-200 cursor-pointer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -88,7 +88,7 @@ export default function Navbar() {
 
             {/* Mobile menu button */}
             <motion.button
-              className="md:hidden p-2 rounded-lg text-slate-400 hover:text-neon-cyan hover:bg-neon-cyan/10 transition-all duration-200 cursor-pointer"
+              className="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-neon-cyan hover:bg-neon-cyan/10 transition-all duration-200 cursor-pointer"
               onClick={() => setMenuOpen(!menuOpen)}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -109,11 +109,11 @@ export default function Navbar() {
             exit={{ opacity: 0 }}
           >
             <div
-              className="absolute inset-0 bg-dark-950/90 backdrop-blur-xl"
+              className="absolute inset-0 bg-slate-900/70 dark:bg-dark-950/90 backdrop-blur-xl"
               onClick={() => setMenuOpen(false)}
             />
             <motion.nav
-              className="absolute top-16 left-0 right-0 bg-dark-800/95 border-b border-neon-cyan/10 py-4"
+              className="absolute top-16 left-0 right-0 bg-white/95 dark:bg-dark-800/95 border-b border-slate-200 dark:border-neon-cyan/10 py-4"
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -20, opacity: 0 }}
@@ -123,7 +123,7 @@ export default function Navbar() {
                 <motion.button
                   key={item}
                   onClick={() => scrollTo(item)}
-                  className="w-full px-6 py-3 text-start text-slate-300 hover:text-neon-cyan hover:bg-neon-cyan/5 transition-colors font-medium cursor-pointer"
+                  className="w-full px-6 py-3 text-start text-slate-700 dark:text-slate-300 hover:text-neon-cyan hover:bg-neon-cyan/5 transition-colors font-medium cursor-pointer"
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.05 * i }}

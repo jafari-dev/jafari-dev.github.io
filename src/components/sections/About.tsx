@@ -45,7 +45,7 @@ export default function About() {
                   height={288}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-950/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 dark:from-dark-950/60 to-transparent" />
               </div>
             </div>
           </motion.div>
@@ -59,8 +59,8 @@ export default function About() {
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <p className="text-slate-300 text-base sm:text-lg leading-relaxed">{t('description')}</p>
-              <p className="text-slate-400 text-base leading-relaxed">{t('description2')}</p>
+              <p className="text-slate-700 dark:text-slate-300 text-base sm:text-lg leading-relaxed">{t('description')}</p>
+              <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">{t('description2')}</p>
             </motion.div>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -75,7 +75,7 @@ export default function About() {
                   whileHover={{ scale: 1.05, y: -3 }}
                 >
                   <p className={`text-2xl sm:text-3xl font-bold font-display ${color}`}>{value}</p>
-                  <p className="text-xs text-slate-500 mt-1 font-medium">{t(key)}</p>
+                  <p className="text-xs text-slate-600 dark:text-slate-500 mt-1 font-medium">{t(key)}</p>
                 </motion.div>
               ))}
             </div>
