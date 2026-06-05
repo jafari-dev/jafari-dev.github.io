@@ -48,6 +48,11 @@ html:not(.dark) {
   html:not(.dark) { color-scheme: light; }
   html.dark { color-scheme: dark; }
 
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

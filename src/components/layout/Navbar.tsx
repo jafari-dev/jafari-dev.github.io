@@ -30,7 +30,7 @@ export default function Navbar() {
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 w-full overflow-x-hidden transition-all duration-300 ${
           scrolled
             ? 'bg-white/80 backdrop-blur-xl border-b border-slate-200 dark:bg-dark-900/80 dark:border-neon-cyan/10'
             : 'bg-transparent'
