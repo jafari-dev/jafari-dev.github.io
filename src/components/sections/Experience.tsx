@@ -14,6 +14,8 @@ const colorMap = {
     dot: 'bg-neon-cyan',
     badge: 'bg-neon-cyan/10 text-neon-cyan border-neon-cyan/30',
     bullet: 'text-neon-cyan',
+    glow: 'via-neon-cyan/60',
+    spot: 'bg-neon-cyan/10',
   },
   purple: {
     border: 'border-neon-purple/20! hover:border-neon-purple/50!',
@@ -21,6 +23,8 @@ const colorMap = {
     dot: 'bg-neon-purple',
     badge: 'bg-neon-purple/10 text-neon-purple border-neon-purple/30',
     bullet: 'text-neon-purple',
+    glow: 'via-neon-purple/60',
+    spot: 'bg-neon-purple/10',
   },
   green: {
     border: 'border-neon-green/20! hover:border-neon-green/50!',
@@ -28,6 +32,8 @@ const colorMap = {
     dot: 'bg-neon-green',
     badge: 'bg-neon-green/10 text-neon-green border-neon-green/30',
     bullet: 'text-neon-green',
+    glow: 'via-neon-green/60',
+    spot: 'bg-neon-green/10',
   },
   pink: {
     border: 'border-neon-pink/20! hover:border-neon-pink/50!',
@@ -35,6 +41,8 @@ const colorMap = {
     dot: 'bg-neon-pink',
     badge: 'bg-neon-pink/10 text-neon-pink border-neon-pink/30',
     bullet: 'text-neon-pink',
+    glow: 'via-neon-pink/60',
+    spot: 'bg-neon-pink/10',
   },
   orange: {
     border: 'border-neon-orange/20! hover:border-neon-orange/50!',
@@ -42,6 +50,8 @@ const colorMap = {
     dot: 'bg-neon-orange',
     badge: 'bg-neon-orange/10 text-neon-orange border-neon-orange/30',
     bullet: 'text-neon-orange',
+    glow: 'via-neon-orange/60',
+    spot: 'bg-neon-orange/10',
   },
 };
 
@@ -63,6 +73,8 @@ export default function Experience() {
 
   return (
     <section id="experience" className="relative py-24">
+      <div className="absolute top-1/3 -left-20 w-96 h-96 glow-spot-purple opacity-10 pointer-events-none" />
+      <div className="absolute bottom-1/3 -right-20 w-96 h-96 glow-spot-cyan opacity-10 pointer-events-none" />
       <div className="relative z-10 max-w-4xl mx-auto px-2 sm:px-6">
         <SectionTitle title={t('title')} subtitle={t('subtitle')} />
 
@@ -86,8 +98,10 @@ export default function Experience() {
                   </div>
 
                   <div
-                    className={`flex-1 glass rounded-2xl p-6 border transition-colors duration-300 ${colors.border} mb-2`}
+                    className={`flex-1 glass rounded-2xl p-6 border transition-colors duration-300 ${colors.border} mb-2 relative overflow-hidden`}
                   >
+                    <div className={`absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent ${colors.glow} to-transparent`} />
+                    <div className={`absolute -top-8 -right-8 w-32 h-32 rounded-full ${colors.spot} blur-2xl pointer-events-none`} />
                     <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">

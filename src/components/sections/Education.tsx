@@ -21,6 +21,8 @@ export default function Education() {
           transition={{ duration: 0.6 }}
         >
           <div className="glass neon-border rounded-2xl p-8 relative overflow-hidden group hover:border-neon-purple/50 transition-all duration-300">
+            <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-neon-purple/60 to-transparent" />
+            <div className="absolute -top-8 -right-8 w-36 h-36 rounded-full bg-neon-purple/10 blur-2xl pointer-events-none" />
             {/* Background glow */}
             <div className="absolute inset-0 glow-spot-purple opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none" />
 

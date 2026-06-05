@@ -28,6 +28,8 @@ export default function Contact() {
     color: string;
     border: string;
     bg: string;
+    glow: string;
+    spot: string;
     external?: boolean;
     action?: () => void;
     actionIcon?: React.ReactNode;
@@ -43,6 +45,8 @@ export default function Contact() {
       color: 'text-neon-pink',
       border: 'border-neon-pink/20 hover:border-neon-pink/50',
       bg: 'bg-neon-pink/5',
+      glow: 'via-neon-pink/60',
+      spot: 'bg-neon-pink/10',
       action: copyEmail,
       actionIcon: copied ? <Check size={16} /> : <Copy size={16} />,
       actionLabel: copied ? t('copied') : t('copy_email'),
@@ -55,6 +59,8 @@ export default function Contact() {
       color: 'text-neon-purple',
       border: 'border-neon-purple/20 hover:border-neon-purple/50',
       bg: 'bg-neon-purple/5',
+      glow: 'via-neon-purple/60',
+      spot: 'bg-neon-purple/10',
       external: true,
     },
     {
@@ -65,6 +71,8 @@ export default function Contact() {
       color: 'text-neon-green',
       border: 'border-neon-green/20 hover:border-neon-green/50',
       bg: 'bg-neon-green/5',
+      glow: 'via-neon-green/60',
+      spot: 'bg-neon-green/10',
     },
     {
       icon: <LinkedInIcon size={28} />,
@@ -74,6 +82,8 @@ export default function Contact() {
       color: 'text-neon-orange',
       border: 'border-neon-orange/20 hover:border-neon-orange/50',
       bg: 'bg-neon-orange/5',
+      glow: 'via-neon-orange/60',
+      spot: 'bg-neon-orange/10',
       external: true,
     },
     {
@@ -84,6 +94,8 @@ export default function Contact() {
       color: 'text-neon-cyan',
       border: 'border-neon-cyan/20 hover:border-neon-cyan/50',
       bg: 'bg-neon-cyan/5',
+      glow: 'via-neon-cyan/60',
+      spot: 'bg-neon-cyan/10',
       external: true,
     },
     {
@@ -94,6 +106,8 @@ export default function Contact() {
       color: 'text-neon-pink',
       border: 'border-neon-pink/20 hover:border-neon-pink/50',
       bg: 'bg-neon-pink/5',
+      glow: 'via-neon-pink/60',
+      spot: 'bg-neon-pink/10',
     },
   ];
 
@@ -101,7 +115,9 @@ export default function Contact() {
     <section id="contact" className="relative py-24">
       {/* Background */}
       <div className="absolute inset-0 bg-linear-to-t from-dark-900/30 to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] glow-spot-cyan opacity-15 pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] glow-spot-cyan opacity-20 pointer-events-none" />
+      <div className="absolute top-1/4 -left-20 w-80 h-80 glow-spot-purple opacity-15 pointer-events-none" />
+      <div className="absolute top-1/2 -right-20 w-80 h-80 glow-spot-pink opacity-10 pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-2 sm:px-6">
         <SectionTitle title={t('title')} subtitle={t('subtitle')} />
@@ -120,13 +136,15 @@ export default function Contact() {
           {contactItems.map((item, i) => (
             <motion.div
               key={item.label}
-              className={`glass rounded-2xl p-5 border transition-colors duration-300 ${item.border} group`}
+              className={`glass rounded-2xl p-5 border transition-colors duration-300 ${item.border} group relative overflow-hidden`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.1 * i } }}
               viewport={{ once: true }}
               transition={{ duration: 0.2 }}
               whileHover={{ y: -3 }}
             >
+              <div className={`absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent ${item.glow} to-transparent`} />
+              <div className={`absolute -top-6 -right-6 w-24 h-24 rounded-full ${item.spot} blur-2xl pointer-events-none`} />
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
                   <div className={`w-11 h-11 rounded-xl ${item.bg} border ${item.border} flex items-center justify-center ${item.color} shrink-0`}>
