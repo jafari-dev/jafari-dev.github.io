@@ -19,7 +19,7 @@
   "about": {
     "title": "About Me",
     "subtitle": "Who I Am",
-    "description": "Front-end Engineer with 7+ years of experience designing and building high-performance web applications. I specialize in React, Next.js, and TypeScript, with deep expertise in software architecture, performance optimization, and testing automation.",
+    "description": "Front-end Engineer with 7+ years of experience designing and building high-performance web applications. Experienced in developing scalable and maintainable codebases using TypeScript, React, and NextJS. Skilled in designing and executing unit and end-to-end tests to ensure application reliability. Leveraged AI-assisted tools to streamline development workflows and enhance code quality. Applied robust architectures and software design principles to deliver reliable, efficient, and user-focused solutions in real-world projects.",
     "description2": "Currently working as a Full-Stack Engineer at Partnerz (Dubai), I've contributed to products serving 200+ universities globally and a mental health study with 20,000+ participants.",
     "stat_years": "Years Experience",
     "stat_clients": "University Clients",
@@ -41,7 +41,7 @@
     "degree": "Bachelor of Software Engineering",
     "university": "Bu-Ali Sina University",
     "location": "Hamedan, Iran",
-    "period": "2015 – 2019"
+    "period": "2017 – 2021"
   },
   "contact": {
     "title": "Get in Touch",
@@ -53,10 +53,13 @@
     "location_label": "Location",
     "location_value": "Tehran, Iran",
     "copy_email": "Copy email",
-    "copied": "Copied!"
+    "copied": "Copied!",
+    "phone_label": "Phone",
+    "telegram_label": "Telegram",
+    "phone_value": "+98 930 848 5060",
+    "telegram_value": "@AhmadJafari"
   },
   "footer": {
-    "built_with": "Built with Next.js, TypeScript & Tailwind CSS",
     "rights": "All rights reserved"
   }
 }

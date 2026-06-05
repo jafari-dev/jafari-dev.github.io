@@ -36,12 +36,9 @@ export default function Skills() {
                 transition={{ duration: 0.2 }}
                 whileHover={{ y: -4 }}
               >
-                <div className="flex items-center gap-3 mb-5">
-                  <div className={`w-2 h-2 rounded-full ${colors.dot} animate-pulse-glow`} />
-                  <h3 className={`font-mono text-sm font-semibold tracking-wider uppercase ${colors.text}`}>
+                  <h3 className={`font-mono mb-6 animate-pulse-glow text-md text-center font-bold tracking-wider uppercase ${colors.text}`}>
                     {category.title}
                   </h3>
-                </div>
 
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIdx) => (

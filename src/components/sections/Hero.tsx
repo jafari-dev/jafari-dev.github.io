@@ -1,16 +1,19 @@
-'use client';
+"use client";
 
-import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
-import { Download, ArrowRight, Mail, ChevronDown } from 'lucide-react';
-import Image from 'next/image';
-import NeonButton from '@/components/ui/NeonButton';
-import { GitHubIcon, LinkedInIcon } from '@/components/ui/Icons';
-import { socialLinks } from '@/data/portfolio';
+import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import { Download, ArrowRight, Mail, ChevronDown } from "lucide-react";
+import Image from "next/image";
+import NeonButton from "@/components/ui/NeonButton";
+import { GitHubIcon, LinkedInIcon } from "@/components/ui/Icons";
+import { socialLinks } from "@/data/portfolio";
 
 const container = {
   hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.3 } },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12, delayChildren: 0.3 },
+  },
 };
 
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
@@ -20,7 +23,7 @@ const item = {
 };
 
 export default function Hero() {
-  const t = useTranslations('hero');
+  const t = useTranslations("hero");
 
   return (
     <section
@@ -38,8 +41,8 @@ export default function Hero() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute w-full h-px bg-linear-to-r from-transparent via-neon-cyan/20 to-transparent"
-          animate={{ top: ['0%', '100%'] }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+          animate={{ top: ["0%", "100%"] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
         />
       </div>
 
@@ -56,13 +59,15 @@ export default function Hero() {
             <motion.div variants={item} className="flex">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-green/30 bg-neon-green/5 text-neon-green text-xs font-mono">
                 <span className="w-2 h-2 rounded-full bg-neon-green animate-pulse-glow" />
-                {t('available')}
+                {t("available")}
               </span>
             </motion.div>
 
             {/* Greeting + Name */}
             <motion.div variants={item}>
-              <p className="text-slate-600 dark:text-slate-400 font-mono text-lg mb-2">{t('greeting')}</p>
+              <p className="text-slate-600 dark:text-slate-400 font-mono text-lg mb-2">
+                {t("greeting")}
+              </p>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-display leading-tight">
                 <span className="gradient-text">Ahmad Jafari</span>
               </h1>
@@ -72,52 +77,43 @@ export default function Hero() {
             <motion.div variants={item}>
               <div className="flex items-center gap-3">
                 <div className="h-px w-8 bg-neon-cyan/60" />
-                <p className="text-neon-cyan font-mono text-lg tracking-wide">{t('title')}</p>
+                <p className="text-neon-cyan font-mono text-lg tracking-wide">
+                  {t("title")}
+                </p>
               </div>
             </motion.div>
 
             {/* Subtitle */}
-            <motion.p variants={item} className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl">
-              {t('subtitle')}
+            <motion.p
+              variants={item}
+              className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl"
+            >
+              {t("subtitle")}
             </motion.p>
 
             {/* CTA Buttons */}
             <motion.div variants={item} className="flex flex-wrap gap-4">
-              <NeonButton href="/AhmadJafari.pdf" download variant="primary" size="lg">
+              <NeonButton
+                href="/AhmadJafari.pdf"
+                download
+                variant="primary"
+                size="lg"
+              >
                 <Download size={18} />
-                {t('cta_cv')}
+                {t("cta_cv")}
               </NeonButton>
               <NeonButton
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
                 variant="ghost"
                 size="lg"
               >
-                {t('cta_contact')}
+                {t("cta_contact")}
                 <ArrowRight size={18} />
               </NeonButton>
-            </motion.div>
-
-            {/* Social links */}
-            <motion.div variants={item} className="flex items-center gap-4 pt-2">
-              <div className="h-px w-8 bg-slate-700" />
-              {[
-                { href: socialLinks.github, icon: <GitHubIcon size={20} />, label: 'GitHub' },
-                { href: socialLinks.linkedin, icon: <LinkedInIcon size={20} />, label: 'LinkedIn' },
-                { href: `mailto:${socialLinks.email}`, icon: <Mail size={20} />, label: 'Email' },
-              ].map(({ href, icon, label }) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  target={href.startsWith('http') ? '_blank' : undefined}
-                  rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  aria-label={label}
-                  className="p-2 rounded-lg text-slate-500 hover:text-neon-cyan hover:bg-neon-cyan/10 border border-transparent hover:border-neon-cyan/20 transition-all duration-200"
-                  whileHover={{ scale: 1.15, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  {icon}
-                </motion.a>
-              ))}
             </motion.div>
           </motion.div>
 
@@ -148,33 +144,53 @@ export default function Hero() {
             <motion.div
               className="absolute -bottom-4 -left-4 glass neon-border rounded-xl px-4 py-2"
               animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
-              <p className="text-xs text-slate-600 dark:text-slate-400 font-mono">const role =</p>
-              <p className="text-sm text-neon-cyan font-mono font-bold">"Senior FE Engineer"</p>
+              <p className="text-2xl text-center font-bold font-display text-neon-cyan">
+                15+
+              </p>
+              <p className="text-xs text-center text-slate-600 dark:text-slate-400">
+                Business Projects
+              </p>
             </motion.div>
 
             <motion.div
               className="absolute -top-4 -right-4 glass neon-border rounded-xl px-4 py-2"
               animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.5,
+              }}
             >
-              <p className="text-2xl font-bold font-display text-neon-purple">7+</p>
-              <p className="text-xs text-slate-600 dark:text-slate-400">Years Exp.</p>
+              <p className="text-2xl text-center font-bold font-display text-neon-purple">
+                7+
+              </p>
+              <p className="text-xs text-center text-slate-600 dark:text-slate-400">
+                Years of Experience
+              </p>
             </motion.div>
           </motion.div>
         </div>
 
         {/* Scroll indicator */}
         <motion.button
-          onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+          onClick={() =>
+            document
+              .getElementById("about")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
           className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-600 dark:text-slate-500 hover:text-neon-cyan transition-colors cursor-pointer"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
         >
-          <span className="text-xs font-mono">{t('scroll')}</span>
-          <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
+          <span className="text-xs font-mono">{t("scroll")}</span>
+          <motion.div
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          >
             <ChevronDown size={20} />
           </motion.div>
         </motion.button>

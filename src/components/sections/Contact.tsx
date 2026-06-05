@@ -4,7 +4,7 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Copy, Check, ExternalLink } from 'lucide-react';
+import { Mail, MapPin, Copy, Check, ExternalLink, Phone, Send } from 'lucide-react';
 import { GitHubIcon, LinkedInIcon } from '@/components/ui/Icons';
 import SectionTitle from '@/components/ui/SectionTitle';
 import NeonButton from '@/components/ui/NeonButton';
@@ -36,19 +36,19 @@ export default function Contact() {
 
   const contactItems: ContactItem[] = [
     {
-      icon: <Mail size={22} />,
+      icon: <Mail size={28} />,
       label: t('email_label'),
       value: socialLinks.email,
       href: `mailto:${socialLinks.email}`,
-      color: 'text-neon-cyan',
-      border: 'border-neon-cyan/20 hover:border-neon-cyan/50',
-      bg: 'bg-neon-cyan/5',
+      color: 'text-neon-pink',
+      border: 'border-neon-pink/20 hover:border-neon-pink/50',
+      bg: 'bg-neon-pink/5',
       action: copyEmail,
       actionIcon: copied ? <Check size={16} /> : <Copy size={16} />,
       actionLabel: copied ? t('copied') : t('copy_email'),
     },
     {
-      icon: <GitHubIcon size={22} />,
+      icon: <GitHubIcon size={28} />,
       label: t('github_label'),
       value: '@jafari-dev',
       href: socialLinks.github,
@@ -58,17 +58,36 @@ export default function Contact() {
       external: true,
     },
     {
-      icon: <LinkedInIcon size={22} />,
-      label: t('linkedin_label'),
-      value: '@jafari-dev',
-      href: socialLinks.linkedin,
+      icon: <Phone size={28} />,
+      label: t('phone_label'),
+      value: t('phone_value'),
+      href: null,
       color: 'text-neon-green',
       border: 'border-neon-green/20 hover:border-neon-green/50',
       bg: 'bg-neon-green/5',
+    },
+    {
+      icon: <LinkedInIcon size={28} />,
+      label: t('linkedin_label'),
+      value: '@jafari-dev',
+      href: socialLinks.linkedin,
+      color: 'text-neon-orange',
+      border: 'border-neon-orange/20 hover:border-neon-orange/50',
+      bg: 'bg-neon-orange/5',
       external: true,
     },
     {
-      icon: <MapPin size={22} />,
+      icon: <Send size={28} />,
+      label: t('telegram_label'),
+      value: t('telegram_value'),
+      href: socialLinks.telegram,
+      color: 'text-neon-cyan',
+      border: 'border-neon-cyan/20 hover:border-neon-cyan/50',
+      bg: 'bg-neon-cyan/5',
+      external: true,
+    },
+    {
+      icon: <MapPin size={28} />,
       label: t('location_label'),
       value: t('location_value'),
       href: null,
@@ -88,7 +107,7 @@ export default function Contact() {
         <SectionTitle title={t('title')} subtitle={t('subtitle')} />
 
         <motion.p
-          className="text-center text-slate-600 dark:text-slate-400 text-base sm:text-lg mb-12 max-w-xl mx-auto"
+          className="text-center text-slate-600 dark:text-slate-400 text-base sm:text-lg mb-12 mx-auto"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -146,20 +165,6 @@ export default function Contact() {
             </motion.div>
           ))}
         </div>
-
-        {/* CTA */}
-        <motion.div
-          className="flex justify-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <NeonButton href={`mailto:${socialLinks.email}`} variant="primary" size="lg">
-            <Mail size={20} />
-            {t('email_label')}: {socialLinks.email}
-          </NeonButton>
-        </motion.div>
       </div>
     </section>
   );

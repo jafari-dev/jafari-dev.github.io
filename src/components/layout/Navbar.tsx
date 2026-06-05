@@ -48,9 +48,9 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
           >
             <span className="text-slate-400">{'<'}</span>
-            Ahmad
-            <span className="text-neon-purple"> Jafari</span>
-            <span className="text-slate-400">{' />'}</span>
+            <span className="text-neon-cyan">A</span>
+            <span className="text-neon-purple">J</span>
+            <span className="text-slate-400">{'/>'}</span>
           </motion.button>
 
           {/* Desktop Nav */}

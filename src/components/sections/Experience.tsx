@@ -11,35 +11,35 @@ const colorMap = {
   cyan: {
     border: 'border-neon-cyan/20! hover:border-neon-cyan/50!',
     borderHover: 'border-neon-cyan/50',
-    dot: 'bg-neon-cyan shadow-[0_0_10px_#00d4ff]',
+    dot: 'bg-neon-cyan',
     badge: 'bg-neon-cyan/10 text-neon-cyan border-neon-cyan/30',
     bullet: 'text-neon-cyan',
   },
   purple: {
     border: 'border-neon-purple/20! hover:border-neon-purple/50!',
     borderHover: 'border-neon-purple/50',
-    dot: 'bg-neon-purple shadow-[0_0_10px_#a855f7]',
+    dot: 'bg-neon-purple',
     badge: 'bg-neon-purple/10 text-neon-purple border-neon-purple/30',
     bullet: 'text-neon-purple',
   },
   green: {
     border: 'border-neon-green/20! hover:border-neon-green/50!',
     borderHover: 'border-neon-green/50',
-    dot: 'bg-neon-green shadow-[0_0_10px_#00ff88]',
+    dot: 'bg-neon-green',
     badge: 'bg-neon-green/10 text-neon-green border-neon-green/30',
     bullet: 'text-neon-green',
   },
   pink: {
     border: 'border-neon-pink/20! hover:border-neon-pink/50!',
     borderHover: 'border-neon-pink/50',
-    dot: 'bg-neon-pink shadow-[0_0_10px_#f472b6]',
+    dot: 'bg-neon-pink',
     badge: 'bg-neon-pink/10 text-neon-pink border-neon-pink/30',
     bullet: 'text-neon-pink',
   },
   orange: {
     border: 'border-neon-orange/20! hover:border-neon-orange/50!',
     borderHover: 'border-neon-orange/50',
-    dot: 'bg-neon-orange shadow-[0_0_10px_#fb923c]',
+    dot: 'bg-neon-orange',
     badge: 'bg-neon-orange/10 text-neon-orange border-neon-orange/30',
     bullet: 'text-neon-orange',
   },
@@ -109,28 +109,28 @@ export default function Experience() {
                       )}
                     </div>
 
-                    <div className="flex flex-wrap gap-4 mb-4 text-sm text-slate-600 dark:text-slate-500">
-                      <span className="flex items-center gap-1">
+                    <div className="flex flex-col gap-2 mb-4 text-sm text-slate-600 dark:text-slate-500">
+                      <div className="flex items-center gap-1">
                         <Calendar size={13} />
                         {exp.period}
-                      </span>
-                      <span className="flex items-center gap-1">
+                      </div>
+                      <div className="flex items-center gap-1">
                         <MapPin size={13} />
                         {exp.location}
-                      </span>
+                      </div>
                     </div>
 
                     <ul className="space-y-2">
                       {exp.highlights.map((highlight, j) => (
                         <motion.li
                           key={j}
-                          className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400"
+                          className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400 leading-6"
                           initial={{ opacity: 0 }}
                           whileInView={{ opacity: 1 }}
                           viewport={{ once: true }}
                           transition={{ delay: 0.05 * j + 0.2 }}
                         >
-                          <span className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${colors.dot}`} />
+                          <span className={`mt-2 w-2 h-2 rounded-full shrink-0 ${colors.dot}`} />
                           {highlight}
                         </motion.li>
                       ))}

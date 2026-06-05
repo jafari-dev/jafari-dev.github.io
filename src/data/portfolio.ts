@@ -160,4 +160,6 @@ export const socialLinks = {
   github: 'https://github.com/jafari-dev',
   linkedin: 'https://www.linkedin.com/in/jafari-dev/',
   email: 'a99jafari@gmail.com',
+  telegram: 'https://t.me/AhmadJafari',
+  phone: '+98 930 848 5060',
 };

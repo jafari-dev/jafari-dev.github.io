@@ -12,10 +12,6 @@ export default function Footer() {
   return (
     <footer className="relative border-t border-neon-cyan/10 py-10 mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-slate-600 dark:text-slate-500 text-sm text-center md:text-start">
-          {t('built_with')}
-        </p>
-
         <div className="flex items-center gap-4">
           {[
             { href: socialLinks.github, icon: <GitHubIcon size={18} />, label: 'GitHub' },
