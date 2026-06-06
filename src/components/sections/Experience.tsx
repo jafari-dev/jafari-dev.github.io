@@ -80,7 +80,7 @@ export default function Experience() {
         <SectionTitle title={t('title')} subtitle={t('subtitle')} />
 
         <div className="relative">
-          <div className="hidden sm:block absolute inset-s-8 top-0 bottom-0 w-px bg-linear-to-b from-neon-cyan/50 via-neon-purple/40 to-neon-cyan/30" />
+          <div className="hidden md:block absolute inset-s-8 top-0 bottom-0 w-px bg-linear-to-b from-neon-cyan/50 via-neon-purple/40 to-neon-cyan/30" />
 
           <div className="space-y-8">
             {experiences.map((exp, i) => {
@@ -88,13 +88,13 @@ export default function Experience() {
               return (
                 <motion.div
                   key={exp.id}
-                  className="relative flex gap-2 sm:gap-10"
+                  className="relative flex gap-2 md:gap-10"
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ duration: 0.6, delay: 0.1 * i }}
                 >
-                  <div className="hidden sm:flex relative shrink-0 w-16 justify-center">
+                  <div className="hidden md:flex relative shrink-0 w-16 justify-center">
                     <div className={`w-4 h-4 rounded-full mt-5 ${colors.dot} z-10`} />
                   </div>
 

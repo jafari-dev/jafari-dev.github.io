@@ -164,7 +164,15 @@ html:not(.dark) {
   html:not(.dark) .glow-spot-green,
   html:not(.dark) .glow-spot-orange { display: none; }
 
-  /* Full-viewport aurora — 5 soft radial blobs, fixed to viewport while page scrolls */
+  /* Full-viewport aurora — 5 soft radial blobs */
+  /* background-attachment: fixed is intentionally omitted — the div is already
+     position: fixed + inset-0, so it never scrolls. Using it on a non-body element
+     triggers an iOS Safari repaint bug that causes a dark bar flash on fast scroll. */
+  .aurora-bg,
+  .aurora-bg-light {
+    will-change: transform;
+  }
+
   .aurora-bg {
     background-image:
       radial-gradient(ellipse at 20% 20%, rgb(0 212 255 / 8%)   0%, transparent 65%),
@@ -172,7 +180,6 @@ html:not(.dark) {
       radial-gradient(ellipse at 50% 58%, rgb(244 114 182 / 5%) 0%, transparent 55%),
       radial-gradient(ellipse at 6%  85%, rgb(168 85 247 / 8%)  0%, transparent 60%),
       radial-gradient(ellipse at 90% 92%, rgb(0 212 255 / 7%)   0%, transparent 55%);
-    background-attachment: fixed;
   }
 
   /* Light-mode aurora — same positions, using the accessible neon palette */
@@ -183,7 +190,6 @@ html:not(.dark) {
       radial-gradient(ellipse at 50% 58%, rgb(157 23 77  /  6%)  0%, transparent 55%),
       radial-gradient(ellipse at 6%  85%, rgb(109 40 217 /  8%)  0%, transparent 60%),
       radial-gradient(ellipse at 90% 92%, rgb(14 116 144 /  8%)  0%, transparent 55%);
-    background-attachment: fixed;
   }
 
   /* Glass card — light default, dark override via .dark parent */
