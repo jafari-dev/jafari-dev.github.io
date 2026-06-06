@@ -47,86 +47,18 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-24 lg:py-24 w-full">
-        <div className="flex flex-col lg:flex-row items-center gap-20 lg:gap-20">
-          {/* Text content */}
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+
+          {/* Avatar — top on mobile, right on desktop */}
           <motion.div
-            className="flex-1 flex flex-col gap-6"
-            variants={container}
-            initial="hidden"
-            animate="show"
-          >
-            {/* Available badge */}
-            <motion.div variants={item} className="flex">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-green/30 bg-neon-green/5 text-neon-green text-xs font-mono">
-                <span className="w-2 h-2 rounded-full bg-neon-green animate-pulse-glow" />
-                {t("available")}
-              </span>
-            </motion.div>
-
-            {/* Greeting + Name */}
-            <motion.div variants={item}>
-              <p className="text-slate-600 dark:text-slate-400 font-mono text-lg mb-2">
-                {t("greeting")}
-              </p>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-display leading-tight">
-                <span className="gradient-text">Ahmad Jafari</span>
-              </h1>
-            </motion.div>
-
-            {/* Title */}
-            <motion.div variants={item}>
-              <div className="flex items-center gap-3">
-                <div className="h-px w-8 bg-neon-cyan/60" />
-                <p className="text-neon-cyan font-mono text-lg tracking-wide">
-                  {t("title")}
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Subtitle */}
-            <motion.p
-              variants={item}
-              className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl"
-            >
-              {t("subtitle")}
-            </motion.p>
-
-            {/* CTA Buttons */}
-            <motion.div variants={item} className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              <NeonButton
-                href="/AhmadJafari.pdf"
-                download
-                variant="primary"
-                size="lg"
-              >
-                <Download size={18} />
-                {t("cta_cv")}
-              </NeonButton>
-              <NeonButton
-                onClick={() =>
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                variant="ghost"
-                size="lg"
-              >
-                {t("cta_contact")}
-                <ArrowRight size={18} />
-              </NeonButton>
-            </motion.div>
-          </motion.div>
-
-          {/* Avatar */}
-          <motion.div
-            className="relative shrink-0"
-            initial={{ opacity: 0, scale: 0.8, x: 40 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: EASE }}
+            className="relative shrink-0 lg:order-last"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: EASE }}
           >
             <div className="absolute inset-0 rounded-full bg-linear-to-br from-neon-cyan/20 via-neon-purple/20 to-neon-pink/20 blur-2xl scale-110 animate-pulse-glow" />
 
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full p-1 bg-linear-to-br from-neon-cyan via-neon-purple to-neon-pink">
+            <div className="relative w-64 h-64 rounded-full p-1 bg-linear-to-br from-neon-cyan via-neon-purple to-neon-pink">
               <div className="w-full h-full rounded-full p-1 bg-dark-950">
                 <div className="w-full h-full rounded-full overflow-hidden">
                   <Image
@@ -146,30 +78,77 @@ export default function Hero() {
               animate={{ y: [10, -10, 10] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
-              <p className="text-2xl text-center font-bold font-display text-neon-cyan">
-                15+
-              </p>
-              <p className="text-xs text-center text-slate-600 dark:text-slate-400">
-                Business Projects
-              </p>
+              <p className="text-2xl text-center font-bold font-display text-neon-cyan">15+</p>
+              <p className="text-xs text-center text-slate-600 dark:text-slate-400">Business Projects</p>
             </motion.div>
 
             <motion.div
               className="absolute -top-4 -right-4 glass neon-border rounded-xl px-4 py-2"
               animate={{ y: [-10, 10, -10] }}
-              transition={{
-                duration: 3.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.5,
-              }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
             >
-              <p className="text-2xl text-center font-bold font-display text-neon-purple">
-                7+
+              <p className="text-2xl text-center font-bold font-display text-neon-purple">7+</p>
+              <p className="text-xs text-center text-slate-600 dark:text-slate-400">Years of Experience</p>
+            </motion.div>
+          </motion.div>
+
+          {/* Text content */}
+          <motion.div
+            className="flex-1 flex flex-col gap-6 items-center lg:items-start"
+            variants={container}
+            initial="hidden"
+            animate="show"
+          >
+            {/* Available badge */}
+            <motion.div variants={item} className="flex">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-green/30 bg-neon-green/5 text-neon-green text-xs font-mono">
+                <span className="w-2 h-2 rounded-full bg-neon-green animate-pulse-glow" />
+                {t("available")}
+              </span>
+            </motion.div>
+
+            {/* Greeting + Name */}
+            <motion.div variants={item} className="text-center lg:text-left">
+              <p className="text-slate-600 dark:text-slate-400 font-mono text-lg mb-2">
+                {t("greeting")}
               </p>
-              <p className="text-xs text-center text-slate-600 dark:text-slate-400">
-                Years of Experience
-              </p>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-display leading-tight">
+                <span className="gradient-text">Ahmad Jafari</span>
+              </h1>
+            </motion.div>
+
+            {/* Title */}
+            <motion.div variants={item}>
+              <div className="flex items-center gap-3 justify-center lg:justify-start">
+                <div className="h-px w-8 bg-neon-cyan/60" />
+                <p className="text-neon-cyan font-mono text-lg tracking-wide">
+                  {t("title")}
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Subtitle */}
+            <motion.p
+              variants={item}
+              className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl text-center lg:text-left"
+            >
+              {t("subtitle")}
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div variants={item} className="flex flex-wrap gap-4 justify-center lg:justify-start">
+              <NeonButton href="/AhmadJafari.pdf" download variant="primary" size="lg">
+                <Download size={18} />
+                {t("cta_cv")}
+              </NeonButton>
+              <NeonButton
+                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                variant="ghost"
+                size="lg"
+              >
+                {t("cta_contact")}
+                <ArrowRight size={18} />
+              </NeonButton>
             </motion.div>
           </motion.div>
         </div>
