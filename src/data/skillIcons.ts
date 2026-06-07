@@ -44,4 +44,10 @@ export const skillIcons: Record<string, string> = {
   'Sentry':                 '/icons/skills/sentry.svg',
   'Linux':                  '/icons/skills/linux.svg',
   'Shopify':                '/icons/skills/shopify.svg',
+  // Project-specific tech
+  'MobX':                   '/icons/skills/mobx.svg',
+  'MobX-State-Tree':        '/icons/skills/mobx.svg',
+  'Apollo GraphQL':         '/icons/skills/apollo.svg',
+  'D3.js':                  '/icons/skills/d3.svg',
+  'Chart.js':              '/icons/skills/chartjs.svg',
 };

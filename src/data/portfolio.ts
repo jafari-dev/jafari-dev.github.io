@@ -18,6 +18,99 @@ export interface SkillCategory {
   skills: string[];
 }
 
+export interface ProjectMetric {
+  value: string;
+  label: string;
+}
+
+export interface Project {
+  id: number;
+  name: string;
+  category: string;
+  tagline: string;
+  description: string;
+  role: string;
+  stack: string[];
+  metrics: ProjectMetric[];
+  highlights: string[];
+  color: 'cyan' | 'purple' | 'green' | 'pink' | 'orange';
+}
+
+export const projects: Project[] = [
+  {
+    id: 1,
+    name: 'Roobah',
+    category: 'FinTech',
+    tagline: 'Comprehensive portfolio-management platform for brokers & asset managers',
+    description:
+      'A full-featured asset-management platform that let portfolio managers and brokerage firms buy and sell stocks for their clients using diverse strategies and advanced trading capabilities.',
+    role:
+      'Owned new-feature delivery, client requirements, and resolution of reported production issues.',
+    stack: ['React', 'TypeScript', 'MobX-State-Tree', 'Apollo GraphQL', 'SCSS', 'D3.js'],
+    metrics: [
+      { value: '10s → <3s', label: 'Initial load' },
+      { value: '10+', label: 'New features' },
+      { value: '~30%', label: 'Faster delivery' },
+    ],
+    highlights: [
+      'Cut initial page load from ~10s to under 3s by caching data in IndexedDB',
+      'Designed & shipped 10+ new, technically challenging features',
+      'Built fully custom, complex data visualizations with D3.js',
+      'Kept the UI smooth and responsive despite a very high real-time update rate',
+      'Implemented advanced validation across stock buy/sell forms',
+      'Spent ~10–20% of each week refactoring legacy code, raising delivery speed ~30% within two months',
+    ],
+    color: 'cyan',
+  },
+  {
+    id: 2,
+    name: 'Gorgi',
+    category: 'FinTech',
+    tagline: 'Financial PWA for individuals managing investments on the Iranian stock market',
+    description:
+      'A financial Progressive Web App that let individual investors manage their positions on the Iranian stock market, packed with strategies and built-in tools to serve the complex needs of high-capital clients.',
+    role:
+      'Built the project from the ground up — owning architecture, tooling, testing, and mentoring.',
+    stack: ['React', 'TypeScript', 'MobX', 'SCSS', 'ApexCharts'],
+    metrics: [
+      { value: '0 → 1', label: 'Built from scratch' },
+      { value: '2', label: 'Juniors onboarded' },
+      { value: 'min', label: 'Bundle size' },
+    ],
+    highlights: [
+      'Architected the project from scratch with a structure built for long-term maintainability',
+      'Implemented several bespoke charts with zero third-party charting libraries',
+      'Crafted a responsive design that gets as close as possible to a native mobile app',
+      'Set up comprehensive ESLint, Prettier, and Stylelint configurations',
+      'Stood up the testing infrastructure and wrote tests for the most critical paths',
+      'Minimized external dependencies to ship the smallest possible bundle for fast loads',
+      'Onboarded 2 intern/junior developers and reviewed their tasks and code',
+    ],
+    color: 'purple',
+  },
+  {
+    id: 3,
+    name: 'Raptor',
+    category: 'FinTech',
+    tagline: 'Algorithm-driven admin panel for analyzing and trading cryptocurrencies',
+    description:
+      'A management dashboard for analyzing, buying, and selling cryptocurrencies based on intelligent algorithms, built for Dorfak Intelligent Systems.',
+    role:
+      'Designed and implemented the entire panel solo — UX, theming, and all core features.',
+    stack: ['React', 'TypeScript', 'CSS-in-JS', 'Chart.js', 'MobX-State-Tree'],
+    metrics: [
+      { value: '<1 mo', label: 'To full MVP' },
+      { value: '2', label: 'Themes' },
+      { value: '100%', label: 'Self-designed' },
+    ],
+    highlights: [
+      'Delivered a fully-featured, dual-theme admin panel with all core capabilities in under a month',
+      'Designed the entire interface from personal taste and product intuition — with no existing design to work from',
+    ],
+    color: 'green',
+  },
+];
+
 export const experiences: Experience[] = [
   {
     id: 1,
