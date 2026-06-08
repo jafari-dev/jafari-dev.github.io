@@ -56,4 +56,8 @@ export const skillIcons: Record<string, string> = {
   'TinyMCE':                '/icons/skills/tinymce.svg',
   'Google Drive':           '/icons/skills/googledrive.svg',
   'Babel':                  '/icons/skills/babel.svg',
+  'Docusaurus':             '/icons/skills/docusaurus.svg',
+  'Preact':                 '/icons/skills/preact.svg',
+  'ANTLR':                  '/icons/skills/antlr.svg',
+  'Polaris':                '/icons/skills/polaris.svg',
 };

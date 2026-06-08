@@ -115,6 +115,43 @@ export const projects: Project[] = [
     ],
     color: 'orange',
   },
+  {
+    name: 'Avicenna Research',
+    category: 'Research',
+    description:
+      'Avicenna was a specialized mental-health platform whose primary customers were universities, research institutes, and organizations affiliated with hospitals and the psychology field.',
+    role:
+      'Developed and maintained two large dashboards as a senior front-end developer, leading major rewrites and refactors of their core features.',
+    stack: ['React', 'TypeScript', 'SCSS', 'MUI', 'Redux', 'TanStack Query', 'Zustand', 'Docusaurus', 'Next.js', 'Tailwind CSS', 'Playwright', 'ANTLR', 'Sentry'],
+    highlights: [
+      'Developed and maintained two large, separate dashboards — one for researchers, one for participants',
+      'Rewrote the landing page from Gatsby to Next.js + Tailwind in an SEO-friendly way',
+      'Rewrote the participants dashboard with React 19 and the latest TanStack React Query',
+      'Refactored the researcher dashboard’s core feature (Survey), switching it from Redux to Zustand',
+      'Built a complex ANTLR-based feature that precisely converted syntax to UI and UI back to the target syntax',
+      'Monitored Sentry weekly and resolved production issues and bugs',
+      'Handled customer tickets directly — understanding their needs and acting to resolve them',
+    ],
+    color: 'cyan',
+  },
+  {
+    name: 'Convi',
+    category: 'AI · SaaS',
+    description:
+      'An AI-powered chatbot for Shopify stores that helped resolve customers’ needs and requests as much as possible, without human intervention.',
+    role:
+      'Full-stack engineer who built the chat box and admin panel from scratch across three repositories, with direct product involvement.',
+    stack: ['Django', 'PostgreSQL', 'Shopify', 'React', 'Preact', 'TypeScript', 'SCSS', 'Tailwind CSS', 'TanStack Query', 'Polaris'],
+    highlights: [
+      'Built the chat box and admin panel completely from scratch and maintained them long-term',
+      'Worked across 3 repositories — backend, merchant admin panel, and the chat box (SDK) — as a full-stack engineer',
+      'Heavily optimized the admin panel and earned the “Built for Shopify” badge in under 1 month',
+      'Contributed directly to Product, shipping several practical features that increased company revenue',
+      'Leveraged AI tools (Cursor & Claude) to develop, refactor, and debug faster, improving product quality and velocity',
+      'Coordinated directly with teammates to reduce conflicts and keep quality high at speed',
+    ],
+    color: 'purple',
+  },
 ];
 
 export const experiences: Experience[] = [
