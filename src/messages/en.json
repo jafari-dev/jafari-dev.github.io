@@ -5,6 +5,7 @@
     "skills": "Skills",
     "experience": "Experience",
     "projects": "Projects",
+    "fun": "Fun",
     "contact": "Contact",
     "toggle_theme": "Toggle theme"
   },
@@ -21,15 +22,9 @@
     "title": "About Me",
     "subtitle": "Who I Am",
     "description": "Front-end Engineer with 7+ years of experience designing and building high-performance web applications. Experienced in developing scalable and maintainable codebases using TypeScript, React, and NextJS. Skilled in designing and executing unit and end-to-end tests to ensure application reliability. Leveraged AI-assisted tools to streamline development workflows and enhance code quality. Applied robust architectures and software design principles to deliver reliable, efficient, and user-focused solutions in real-world projects.",
-    "description2": "Currently working as a Full-Stack Engineer at Partnerz (Dubai), I've contributed to products serving 200+ universities globally and a mental health study with 20,000+ participants.",
-    "stat_so": "Unread Bookmarks",
-    "stat_duck": "Rubber Duck Sessions",
-    "stat_coffee": "Cups of Coffee",
-    "stat_ctrlz": "Ctrl+Z Presses",
-    "stat_tabs": "Tabs Open Right Now",
-    "stat_side": "Abandoned Side Projects",
-    "stat_learning": "Days Without Learning",
-    "stat_passion": "Code OCD"
+    "description2": "I'm currently a Full-Stack Engineer at Partnerz (Dubai), where I build an AI-powered Shopify chatbot — optimizing it to earn the \"Built for Shopify\" badge and helping lift net revenue retention. Earlier, at Avicenna Research, I worked on a platform serving 200+ universities and institutes worldwide, including a mental-health study with 20,000+ participants.",
+    "description3": "Beyond writing code, I'm a deliberate, everyday user of AI tools — leaning on them to sharpen my output and accelerate my workflow without ever trading away quality. I stay endlessly curious and adaptable, picking up any new tool quickly and enjoying every step of the process.",
+    "description4": "I'm also genuinely passionate about the product side of building software. Across the different teams I've worked with, I've worked to grow an inner product manager — caring about the why behind features, not just the how — and that mindset has already earned me a wealth of valuable experience."
   },
   "skills": {
     "title": "Tech Stack",
@@ -51,6 +46,18 @@
     "university": "Bu-Ali Sina University",
     "location": "Hamedan, Iran",
     "period": "2017 – 2021"
+  },
+  "fun": {
+    "title": "Fun Facts",
+    "subtitle": "Strictly Unprofessional Stats",
+    "stat_so": "Unread Bookmarks",
+    "stat_duck": "Rubber Duck Sessions",
+    "stat_coffee": "Cups of Coffee",
+    "stat_ctrlz": "Ctrl+Z Presses",
+    "stat_tabs": "Tabs Open Right Now",
+    "stat_side": "Abandoned Side Projects",
+    "stat_learning": "Days Without Learning",
+    "stat_passion": "Code OCD"
   },
   "contact": {
     "title": "Get in Touch",

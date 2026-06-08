@@ -6,7 +6,7 @@ import { useTheme } from 'next-themes';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 
-const NAV_ITEMS = ['about', 'skills', 'experience', 'projects', 'contact'] as const;
+const NAV_ITEMS = ['about', 'skills', 'experience', 'projects', 'fun', 'contact'] as const;
 
 export default function Navbar() {
   const t = useTranslations('nav');
