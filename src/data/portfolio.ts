@@ -18,6 +18,105 @@ export interface SkillCategory {
   skills: string[];
 }
 
+export interface Project {
+  name: string;
+  category: string;
+  description: string;
+  role: string;
+  stack: string[];
+  highlights: string[];
+  color: 'cyan' | 'purple' | 'green' | 'pink' | 'orange';
+}
+
+export const projects: Project[] = [
+  {
+    name: 'Roobah',
+    category: 'FinTech',
+    description:
+      'A full-featured asset-management platform that let portfolio managers and brokerage firms buy and sell stocks for their clients using diverse strategies and advanced trading capabilities.',
+    role:
+      'Owned new-feature delivery, client requirements, and resolution of reported production issues.',
+    stack: ['React', 'TypeScript', 'MobX-State-Tree', 'Apollo GraphQL', 'SCSS', 'D3.js'],
+    highlights: [
+      'Cut initial page load from ~10s to under 3s by caching data in IndexedDB',
+      'Designed & shipped 10+ new, technically challenging features',
+      'Built fully custom, complex data visualizations with D3.js',
+      'Kept the UI smooth and responsive despite a very high real-time update rate',
+      'Implemented advanced validation across stock buy/sell forms',
+      'Spent ~10–20% of each week refactoring legacy code, raising delivery speed ~30% within two months',
+    ],
+    color: 'cyan',
+  },
+  {
+    name: 'Gorgi',
+    category: 'FinTech',
+    description:
+      'A financial Progressive Web App that let individual investors manage their positions on the Iranian stock market, packed with strategies and built-in tools to serve the complex needs of high-capital clients.',
+    role:
+      'Built the project from the ground up — owning architecture, tooling, testing, and mentoring.',
+    stack: ['React', 'TypeScript', 'MobX', 'SCSS', 'ApexCharts'],
+    highlights: [
+      'Architected the project from scratch with a structure built for long-term maintainability',
+      'Implemented several bespoke charts with zero third-party charting libraries',
+      'Crafted a responsive design that gets as close as possible to a native mobile app',
+      'Set up comprehensive ESLint, Prettier, and Stylelint configurations',
+      'Stood up the testing infrastructure and wrote tests for the most critical paths',
+      'Minimized external dependencies to ship the smallest possible bundle for fast loads',
+      'Onboarded 2 intern/junior developers and reviewed their tasks and code',
+    ],
+    color: 'purple',
+  },
+  {
+    name: 'Requireganizer',
+    category: 'DevTools',
+    description:
+      'A specialized tool for software teams that let them capture and manage requirements and user scenarios, then automatically generate software test templates from those requirements and scenarios — enabling fast, test-driven development.',
+    role:
+      'Implemented the full UI and feature set while building a state and business-logic layer fully decoupled from the presentation layer, backed by extensive testing.',
+    stack: ['React', 'TypeScript', 'Ant Design', 'MobX-State-Tree', 'Google Drive', 'TinyMCE', 'Emotion', 'Jest', 'React Testing Library'],
+    highlights: [
+      'Built the UI and feature set end to end',
+      'Wrote unit, integration, snapshot & regression tests, reaching 90% code coverage',
+      'Implemented stores and business logic fully decoupled from the presentation layer',
+      'Customized several Ant Design components for a closer match to the design',
+      'Studied the Google Drive API and built the full Google Drive integration',
+      'Implemented a text-selection commenting system, similar to Google Docs',
+    ],
+    color: 'green',
+  },
+  {
+    name: 'Luggo',
+    category: 'Logistics',
+    description:
+      'A Dutch software startup born during COVID with a clever idea — transporting your bags, luggage, and belongings from your trip’s origin to its destination and back again.',
+    role:
+      'Contributed to a large-scale refactor: a JavaScript-to-TypeScript migration, a state-management switch, and root-cause bug fixing across legacy code.',
+    stack: ['React', 'JavaScript', 'TypeScript', 'Redux', 'MobX', 'Material UI', 'Storybook'],
+    highlights: [
+      'Helped refactor a large codebase and migrate it from JavaScript to TypeScript',
+      'Helped switch from a noisy, complex Redux setup to MobX, simplifying the data layer',
+      'Helped fix dozens of bugs and errors at their root within legacy code',
+      'Wrote Storybook stories for components to enable isolated visual testing',
+    ],
+    color: 'pink',
+  },
+  {
+    name: 'Lexian',
+    category: 'LegalTech',
+    description:
+      'A Swiss legal project designed for law firms and legal companies to manage their clients, cases, lawyers, and all office matters in a unified, integrated way.',
+    role:
+      'Owned one of the seven core modules end to end, contributed to the rest, and authored complex, mock-heavy test suites.',
+    stack: ['React', 'TypeScript', 'Emotion', 'MobX', 'Babel', 'Webpack', 'Jest', 'React Testing Library'],
+    highlights: [
+      'Wrote diverse, high-complexity software tests with specialized mocks',
+      'Fully implemented one of the software’s 7 core modules and contributed to the rest',
+      'Built an advanced Tree-view and Stepper component with diverse features and modes',
+    ],
+    color: 'orange',
+  },
+];
+
 export const experiences: Experience[] = [
   {
     id: 1,

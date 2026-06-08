@@ -4,6 +4,7 @@
     "about": "About",
     "skills": "Skills",
     "experience": "Experience",
+    "projects": "Projects",
     "contact": "Contact",
     "toggle_theme": "Toggle theme"
   },
@@ -38,6 +39,10 @@
     "title": "Experience",
     "subtitle": "My Professional Journey",
     "present": "Present"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Things I've Built"
   },
   "education": {
     "title": "Education",
