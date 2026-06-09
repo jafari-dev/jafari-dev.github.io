@@ -62,7 +62,7 @@ export default function Projects() {
             return (
               <motion.article
                 key={project.name}
-                className={`glass rounded-2xl border-2! overflow-hidden transition-colors duration-300 ${colors.border} relative rotate-y-30!`}
+                className={`glass rounded-2xl border-2! overflow-hidden transition-colors duration-300 ${colors.border} relative`}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px', }}
