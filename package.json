@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "pnpm exec biome check",
     "export": "next build"
   },
   "dependencies": {
@@ -19,20 +19,14 @@
     "react-dom": "^19.2.7"
   },
   "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "@swc/core",
-      "sharp",
-      "unrs-resolver"
-    ]
+    "onlyBuiltDependencies": ["@parcel/watcher", "@swc/core", "sharp", "unrs-resolver"]
   },
   "devDependencies": {
+    "@biomejs/biome": "2.4.16",
     "@tailwindcss/postcss": "^4.3.0",
     "@types/node": "^25.9.1",
     "@types/react": "^19.2.16",
     "@types/react-dom": "^19.2.3",
-    "eslint": "^10.4.1",
-    "eslint-config-next": "^16.2.7",
     "postcss": "^8.5.15",
     "tailwindcss": "^4.3.0",
     "typescript": "^6.0.3"
