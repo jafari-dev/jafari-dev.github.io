@@ -55,9 +55,9 @@ export default function Skills() {
   return (
     <section id="skills" className="relative py-24">
       <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-transparent via-dark-900/50 to-transparent opacity-0 dark:opacity-100" />
-      <div className="glow-spot-cyan pointer-events-none absolute top-1/4 -left-10 h-[32rem] w-[32rem] opacity-25" />
-      <div className="glow-spot-purple pointer-events-none absolute -right-10 bottom-1/4 h-[32rem] w-[32rem] opacity-25" />
-      <div className="glow-spot-orange pointer-events-none absolute bottom-0 left-1/3 h-[26rem] w-[26rem] opacity-10" />
+      <div className="glow-spot-cyan pointer-events-none absolute top-1/4 -left-10 h-128 w-lg opacity-25" />
+      <div className="glow-spot-purple pointer-events-none absolute -right-10 bottom-1/4 h-128 w-lg opacity-25" />
+      <div className="glow-spot-orange pointer-events-none absolute bottom-0 left-1/3 h-96 w-sm opacity-10" />
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
         <SectionTitle title={t("title")} subtitle={t("subtitle")} />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -68,10 +68,10 @@ export default function Skills() {
                 key={catIdx}
                 className={`glass rounded-2xl border p-6 ${colors.border} group relative overflow-hidden transition-colors duration-300 hover:border-opacity-60`}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.1 * catIdx } }}
+                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.2 }}
-                whileHover={{ y: -4 }}
+                whileHover={{ y: -10 }}
               >
                 <div
                   className={`absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent ${colors.glow} to-transparent`}

@@ -10,9 +10,9 @@ export default function Education() {
 
   return (
     <section className="relative py-16">
-      <div className="glow-spot-purple pointer-events-none absolute top-1/3 -left-10 h-[28rem] w-[28rem] opacity-20" />
-      <div className="glow-spot-cyan pointer-events-none absolute -right-10 bottom-0 h-[24rem] w-[24rem] opacity-15" />
-      <div className="glow-spot-pink pointer-events-none absolute top-0 left-1/2 h-[20rem] w-[30rem] -translate-x-1/2 opacity-8" />
+      <div className="glow-spot-purple pointer-events-none absolute top-1/3 -left-10 h-112 w-md opacity-20" />
+      <div className="glow-spot-cyan pointer-events-none absolute -right-10 bottom-0 h-96 w-sm opacity-15" />
+      <div className="glow-spot-pink pointer-events-none absolute top-0 left-1/2 h-80 w-120 -translate-x-1/2 opacity-8" />
       <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6">
         <SectionTitle title={t("title")} subtitle={t("subtitle")} />
         <motion.div

@@ -49,9 +49,9 @@ export default function Projects() {
 
   return (
     <section id="projects" className="relative py-24">
-      <div className="glow-spot-cyan pointer-events-none absolute top-1/4 -right-10 h-[32rem] w-[32rem] opacity-25" />
-      <div className="glow-spot-purple pointer-events-none absolute bottom-1/4 -left-10 h-[32rem] w-[32rem] opacity-25" />
-      <div className="glow-spot-green pointer-events-none absolute top-1/2 left-1/2 h-[28rem] w-[28rem] -translate-x-1/2 opacity-10" />
+      <div className="glow-spot-cyan pointer-events-none absolute top-1/4 -right-10 h-128 w-lg opacity-25" />
+      <div className="glow-spot-purple pointer-events-none absolute bottom-1/4 -left-10 h-128 w-lg opacity-25" />
+      <div className="glow-spot-green pointer-events-none absolute top-1/2 left-1/2 h-112 w-md -translate-x-1/2 opacity-10" />
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6">
         <SectionTitle title={t("title")} subtitle={t("subtitle")} />
         <div className="space-y-10">

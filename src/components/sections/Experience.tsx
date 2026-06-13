@@ -75,13 +75,13 @@ export default function Experience() {
 
   return (
     <section id="experience" className="relative py-24">
-      <div className="glow-spot-purple pointer-events-none absolute top-1/4 -left-10 h-[32rem] w-[32rem] opacity-25" />
-      <div className="glow-spot-cyan pointer-events-none absolute -right-10 bottom-1/4 h-[32rem] w-[32rem] opacity-25" />
-      <div className="glow-spot-pink pointer-events-none absolute top-1/2 left-1/2 h-[28rem] w-[28rem] -translate-x-1/2 opacity-10" />
+      <div className="glow-spot-purple pointer-events-none absolute top-1/4 -left-10 h-128 w-lg opacity-25" />
+      <div className="glow-spot-cyan pointer-events-none absolute -right-10 bottom-1/4 h-128 w-lg opacity-25" />
+      <div className="glow-spot-pink pointer-events-none absolute top-1/2 left-1/2 h-112 w-md -translate-x-1/2 opacity-10" />
       <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6">
         <SectionTitle title={t("title")} subtitle={t("subtitle")} />
         <div className="relative">
-          <div className="absolute inset-s-8 top-0 bottom-0 hidden w-px bg-linear-to-b from-neon-cyan/50 via-neon-purple/40 to-neon-cyan/30 md:block" />
+          <div className="absolute inset-s-8 top-8 bottom-8 hidden w-px bg-linear-to-b from-neon-cyan/50 via-neon-purple/40 to-neon-cyan/30 md:block" />
           <div className="space-y-8">
             {experiences.map((exp, i) => {
               const colors = colorMap[exp.color];
@@ -97,7 +97,6 @@ export default function Experience() {
                   <div className="relative hidden w-16 shrink-0 justify-center md:flex">
                     <div className={`mt-5 h-4 w-4 rounded-full ${colors.dot} z-10`} />
                   </div>
-
                   <div
                     className={`glass flex-1 rounded-2xl border p-6 transition-colors duration-300 ${colors.border} relative mb-2 overflow-hidden`}
                   >
