@@ -1,13 +1,13 @@
-import type { MetadataRoute } from 'next';
+import type { MetadataRoute } from "next";
 
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://jafari.dev',
+      url: "https://jafari.dev",
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 1,
     },
   ];

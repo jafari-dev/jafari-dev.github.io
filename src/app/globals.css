@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 /* ─── Dark-mode via .dark class (next-themes) ─────────────────────────── */
+/* biome-ignore */
 @variant dark (&:where(.dark, .dark *));
 
 /* ─── Theme tokens ────────────────────────────────────────────────────── */
