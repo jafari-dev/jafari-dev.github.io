@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@source "../**/*.{tsx,ts}";
+
 /* ─── Dark-mode via .dark class (next-themes) ─────────────────────────── */
 @variant dark (&:where(.dark, .dark *));
 
@@ -14,6 +16,8 @@
   --color-neon-green: #00ff88;
   --color-neon-pink: #f472b6;
   --color-neon-orange: #fb923c;
+  --color-neon-blue: #3b82f6;
+  --color-neon-yellow: #facc15;
 
   /* Dark surfaces */
   --color-dark-950: #020209;
@@ -43,6 +47,8 @@ html:not(.dark) {
   --color-neon-green: #047857;
   --color-neon-pink: #9d174d;
   --color-neon-orange: #c2410c;
+  --color-neon-blue: #1d4ed8;
+  --color-neon-yellow: #a16207;
 }
 
 /* ─── Base ────────────────────────────────────────────────────────────── */
@@ -113,6 +119,18 @@ html:not(.dark) {
       0 0 30px rgb(0 255 136 / 20%),
       0 0 60px rgb(0 255 136 / 10%);
   }
+  .neon-glow-blue {
+    box-shadow:
+      0 0 10px rgb(59 130 246 / 40%),
+      0 0 30px rgb(59 130 246 / 20%),
+      0 0 60px rgb(59 130 246 / 10%);
+  }
+  .neon-glow-yellow {
+    box-shadow:
+      0 0 10px rgb(250 204 21 / 40%),
+      0 0 30px rgb(250 204 21 / 20%),
+      0 0 60px rgb(250 204 21 / 10%);
+  }
 
   /* Neon text glow */
   .neon-text-cyan {
@@ -125,6 +143,18 @@ html:not(.dark) {
     text-shadow:
       0 0 7px rgb(168 85 247 / 80%),
       0 0 20px rgb(168 85 247 / 50%);
+  }
+  .neon-text-blue {
+    text-shadow:
+      0 0 7px rgb(59 130 246 / 80%),
+      0 0 20px rgb(59 130 246 / 50%),
+      0 0 40px rgb(59 130 246 / 30%);
+  }
+  .neon-text-yellow {
+    text-shadow:
+      0 0 7px rgb(250 204 21 / 80%),
+      0 0 20px rgb(250 204 21 / 50%),
+      0 0 40px rgb(250 204 21 / 30%);
   }
 
   /* Cyber grid background */
@@ -156,13 +186,21 @@ html:not(.dark) {
   .glow-spot-orange {
     background: radial-gradient(ellipse at center, rgb(251 146 60 / 14%) 0%, transparent 70%);
   }
+  .glow-spot-blue {
+    background: radial-gradient(ellipse at center, rgb(59 130 246 / 14%) 0%, transparent 70%);
+  }
+  .glow-spot-yellow {
+    background: radial-gradient(ellipse at center, rgb(250 204 21 / 12%) 0%, transparent 70%);
+  }
 
   /* Hide glow spots in light mode — they look like colored smudges on white */
   html:not(.dark) .glow-spot-cyan,
   html:not(.dark) .glow-spot-purple,
   html:not(.dark) .glow-spot-pink,
   html:not(.dark) .glow-spot-green,
-  html:not(.dark) .glow-spot-orange { display: none; }
+  html:not(.dark) .glow-spot-orange,
+  html:not(.dark) .glow-spot-blue,
+  html:not(.dark) .glow-spot-yellow { display: none; }
 
   /* Full-viewport aurora — 5 soft radial blobs */
   /* background-attachment: fixed is intentionally omitted — the div is already

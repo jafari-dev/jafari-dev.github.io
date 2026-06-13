@@ -9,7 +9,7 @@ export interface Experience {
   employmentType: "Full-time" | "Part-time" | "Contract";
   locationType: "On-site" | "Remote" | "Hybrid";
   highlights: Array<string>;
-  color: "cyan" | "purple" | "green" | "pink" | "orange";
+  color: "cyan" | "purple" | "green" | "pink" | "orange" | "blue" | "yellow";
   logo?: string;
 }
 
@@ -25,7 +25,7 @@ export interface Project {
   role: string;
   stack: Array<string>;
   highlights: Array<string>;
-  color: "cyan" | "purple" | "green" | "pink" | "orange";
+  color: "cyan" | "purple" | "green" | "pink" | "orange" | "blue" | "yellow";
 }
 
 export const projects: Array<Project> = [
@@ -150,7 +150,7 @@ export const projects: Array<Project> = [
       "Monitored Sentry weekly and resolved production issues and bugs",
       "Handled customer tickets directly — understanding their needs and acting to resolve them",
     ],
-    color: "cyan",
+    color: "blue",
   },
   {
     name: "Convi",
@@ -178,7 +178,7 @@ export const projects: Array<Project> = [
       "Leveraged AI tools (Cursor & Claude) to develop, refactor, and debug faster, improving product quality and velocity",
       "Coordinated directly with teammates to reduce conflicts and keep quality high at speed",
     ],
-    color: "purple",
+    color: "yellow",
   },
 ];
 
@@ -289,7 +289,7 @@ export const experiences: Array<Experience> = [
       "Developed 5 complex mini-projects and a feature-rich Twitter-like website with a responsive design",
       "Guided students on essential soft skills, including task time estimation, cross-team communication and stress management in urgent tasks",
     ],
-    color: "cyan",
+    color: "blue",
     logo: "/logos/meybod-university.png",
   },
   {
@@ -306,7 +306,7 @@ export const experiences: Array<Experience> = [
       "Built lightweight, performance-critical UI components using React and pure JS",
       "Participated in ideation and product design for application features",
     ],
-    color: "purple",
+    color: "yellow",
   },
 ];
 

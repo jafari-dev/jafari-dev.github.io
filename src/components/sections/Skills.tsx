@@ -47,6 +47,22 @@ const categoryColors = [
     glow: "via-neon-orange/60",
     spot: "bg-neon-orange/10",
   },
+  {
+    border: "border-neon-blue/20",
+    text: "text-neon-blue",
+    badge: "bg-neon-blue/10 border-neon-blue/30 text-neon-blue",
+    dot: "bg-neon-blue",
+    glow: "via-neon-blue/60",
+    spot: "bg-neon-blue/10",
+  },
+  {
+    border: "border-neon-yellow/20",
+    text: "text-neon-yellow",
+    badge: "bg-neon-yellow/10 border-neon-yellow/30 text-neon-yellow",
+    dot: "bg-neon-yellow",
+    glow: "via-neon-yellow/60",
+    spot: "bg-neon-yellow/10",
+  },
 ];
 
 export default function Skills() {

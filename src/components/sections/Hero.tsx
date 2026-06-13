@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown, Download } from "lucide-react";
+import { ChevronDown, Download, MessageCircleMore } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import NeonButton from "@/components/ui/NeonButton";
@@ -125,8 +125,8 @@ export default function Hero() {
                 variant="ghost"
                 size="lg"
               >
+                <MessageCircleMore size={18} />
                 {t("cta_contact")}
-                <ArrowRight size={18} />
               </NeonButton>
             </motion.div>
           </motion.div>

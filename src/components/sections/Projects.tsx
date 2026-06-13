@@ -42,6 +42,20 @@ const colorMap = {
     glow: "via-neon-orange/60",
     spot: "bg-neon-orange/10",
   },
+  blue: {
+    border: "border-neon-blue/20! hover:border-neon-blue/50!",
+    text: "text-neon-blue",
+    badge: "bg-neon-blue/10 text-neon-blue border-neon-blue/30",
+    glow: "via-neon-blue/60",
+    spot: "bg-neon-blue/10",
+  },
+  yellow: {
+    border: "border-neon-yellow/20! hover:border-neon-yellow/50!",
+    text: "text-neon-yellow",
+    badge: "bg-neon-yellow/10 text-neon-yellow border-neon-yellow/30",
+    glow: "via-neon-yellow/60",
+    spot: "bg-neon-yellow/10",
+  },
 };
 
 export default function Projects() {

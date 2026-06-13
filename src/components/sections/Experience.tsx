@@ -53,6 +53,24 @@ const colorMap = {
     glow: "via-neon-orange/60",
     spot: "bg-neon-orange/10",
   },
+  blue: {
+    border: "border-neon-blue/20! hover:border-neon-blue/50!",
+    borderHover: "border-neon-blue/50",
+    dot: "bg-neon-blue",
+    badge: "bg-neon-blue/10 text-neon-blue border-neon-blue/30",
+    bullet: "text-neon-blue",
+    glow: "via-neon-blue/60",
+    spot: "bg-neon-blue/10",
+  },
+  yellow: {
+    border: "border-neon-yellow/20! hover:border-neon-yellow/50!",
+    borderHover: "border-neon-yellow/50",
+    dot: "bg-neon-yellow",
+    badge: "bg-neon-yellow/10 text-neon-yellow border-neon-yellow/30",
+    bullet: "text-neon-yellow",
+    glow: "via-neon-yellow/60",
+    spot: "bg-neon-yellow/10",
+  },
 };
 
 function formatDate(date: Date) {
