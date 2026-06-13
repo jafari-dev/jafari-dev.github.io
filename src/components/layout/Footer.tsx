@@ -10,7 +10,7 @@ export default function Footer() {
   const t = useTranslations("footer");
 
   return (
-    <footer className="relative border-neon-cyan/10 border-t py-10">
+    <footer className="relative border-neon-cyan/10 border-t bg-white/80 py-10 backdrop-blur-xl dark:bg-dark-900/80">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 sm:px-6 md:flex-row">
         <div className="flex items-center gap-4">
           {[
@@ -32,7 +32,6 @@ export default function Footer() {
             </motion.a>
           ))}
         </div>
-
         <p className="text-center text-slate-600 text-sm md:text-end dark:text-slate-500">
           © {new Date().getFullYear()} Ahmad Jafari. {t("rights")}.
         </p>
