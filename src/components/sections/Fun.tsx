@@ -13,8 +13,8 @@ const HEX = "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)";
 // 0.75W horizontally and 0.866W·½ vertically, scaled by ~1.08 for a slight gap.
 const stats = [
   {
-    key: "stat_ctrlz",
-    value: "3B+",
+    key: "stat_passion",
+    value: "∞",
     color: "text-neon-pink",
     edge: "var(--color-neon-pink)",
     spot: "bg-neon-pink/15",
@@ -73,8 +73,8 @@ const stats = [
     y: 0.468,
   },
   {
-    key: "stat_passion",
-    value: "∞",
+    key: "stat_ctrlz",
+    value: "3B+",
     color: "text-neon-green",
     edge: "var(--color-neon-green)",
     spot: "bg-neon-green/15 ",
@@ -115,7 +115,7 @@ export default function Fun() {
                 }}
               >
                 <motion.div
-                  className={`group relative hover:z-10 ${shadow}`}
+                  className={`group relative cursor-default hover:z-10 ${shadow}`}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -125,14 +125,14 @@ export default function Fun() {
                   <div className="relative aspect-[1.15/1] w-full">
                     {/* Frosted glass hexagon — nothing opaque behind it, so the page shows through */}
                     <div
-                      className="glass absolute inset-0 flex flex-col items-center justify-center border-0 px-4 text-center"
+                      className="glass absolute inset-0 flex flex-col items-center justify-center border-0 p-4 text-center"
                       style={{ clipPath: HEX }}
                     >
                       <div
                         className={`pointer-events-none absolute top-1/2 left-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 rounded-full ${spot} blur-2xl`}
                       />
                       <p className={`relative font-bold font-display text-xl sm:text-2xl ${color}`}>{value}</p>
-                      <p className="relative mt-1 font-medium text-[10px] text-slate-600 sm:text-xs dark:text-slate-500">
+                      <p className="relative mt-1 font-medium text-slate-600 text-xs sm:text-sm dark:text-slate-500">
                         {t(key)}
                       </p>
                     </div>
@@ -144,10 +144,10 @@ export default function Fun() {
                       className="pointer-events-none absolute inset-0 h-full w-full"
                     >
                       <polygon
-                        points="25,0 75,0 100,50 75,100 25,100 0,50"
+                        points="25,2 75,2 98,50 75,98 25,98 2,50"
                         fill="none"
                         stroke={edge}
-                        strokeWidth={1.5}
+                        strokeWidth={3}
                         vectorEffect="non-scaling-stroke"
                       />
                     </svg>
