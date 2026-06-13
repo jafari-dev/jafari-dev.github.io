@@ -50,13 +50,16 @@
   "fun": {
     "title": "Fun Facts",
     "subtitle": "Strictly Unprofessional Stats",
-    "stat_so": "Unread Bookmarks",
-    "stat_duck": "Rubber Duck Sessions",
-    "stat_coffee": "Cups of Coffee",
+    "stat_bookmarks": "Unread Bookmarks",
+    "stat_duck": "Spaghetti Code",
+    "stat_coffee": "Caffeine Shots",
     "stat_ctrlz": "Ctrl+Z Presses",
-    "stat_side": "Abandoned Idea",
-    "stat_learning": "Days Without Learning",
-    "stat_passion": "Code OCD"
+    "stat_side": "Project Graveyard",
+    "stat_learning": "Continuous Growth",
+    "stat_passion": "Code OCD",
+    "stat_tabs": "Google Searches",
+    "stat_stackoverflow": "Browser Tabs",
+    "stat_merge": "Git Conflicts"
   },
   "contact": {
     "title": "Get in Touch",

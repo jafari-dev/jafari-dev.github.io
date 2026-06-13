@@ -23,8 +23,8 @@ const stats = [
     y: 0,
   },
   {
-    key: "stat_so",
-    value: "296",
+    key: "stat_bookmarks",
+    value: "200+",
     color: "text-neon-cyan",
     edge: "var(--color-neon-cyan)",
     spot: "bg-neon-cyan/15",
@@ -34,27 +34,27 @@ const stats = [
   },
   {
     key: "stat_duck",
-    value: "100+",
-    color: "text-neon-purple",
-    edge: "var(--color-neon-purple)",
-    spot: "bg-neon-purple/15",
-    shadow: "hover:drop-shadow-[0_0_16px_color-mix(in_srgb,var(--color-neon-purple)_30%,transparent)]",
+    value: "0%",
+    color: "text-neon-green",
+    edge: "var(--color-neon-green)",
+    spot: "bg-neon-green/15",
+    shadow: "hover:drop-shadow-[0_0_16px_color-mix(in_srgb,var(--color-neon-green)_30%,transparent)]",
     x: 0.81,
     y: -0.468,
   },
   {
     key: "stat_coffee",
     value: "4k+",
-    color: "text-neon-green",
-    edge: "var(--color-neon-green)",
-    spot: "bg-neon-green/15",
-    shadow: "hover:drop-shadow-[0_0_16px_color-mix(in_srgb,var(--color-neon-green)_30%,transparent)]",
+    color: "text-neon-purple",
+    edge: "var(--color-neon-purple)",
+    spot: "bg-neon-purple/15",
+    shadow: "hover:drop-shadow-[0_0_16px_color-mix(in_srgb,var(--color-neon-purple)_30%,transparent)]",
     x: 0.81,
     y: 0.468,
   },
   {
     key: "stat_side",
-    value: "80+",
+    value: "50+",
     color: "text-neon-cyan",
     edge: "var(--color-neon-cyan)",
     spot: "bg-neon-cyan/15",
@@ -64,7 +64,7 @@ const stats = [
   },
   {
     key: "stat_learning",
-    value: "0",
+    value: "100%",
     color: "text-neon-purple",
     edge: "var(--color-neon-purple)",
     spot: "bg-neon-purple/15",
@@ -82,7 +82,41 @@ const stats = [
     x: -0.81,
     y: -0.468,
   },
+  {
+    key: "stat_tabs",
+    value: "1M+",
+    color: "text-neon-orange",
+    edge: "var(--color-neon-orange)",
+    spot: "bg-neon-orange/15",
+    shadow: "hover:drop-shadow-[0_0_16px_color-mix(in_srgb,var(--color-neon-orange)_30%,transparent)]",
+    x: -0.81,
+    y: 1.403,
+  },
+  {
+    key: "stat_stackoverflow",
+    value: "100+",
+    color: "text-neon-orange",
+    edge: "var(--color-neon-orange)",
+    spot: "bg-neon-orange/15",
+    shadow: "hover:drop-shadow-[0_0_16px_color-mix(in_srgb,var(--color-neon-orange)_30%,transparent)]",
+    x: 0.81,
+    y: 1.403,
+  },
+  {
+    key: "stat_merge",
+    value: "500+",
+    color: "text-neon-pink",
+    edge: "var(--color-neon-pink)",
+    spot: "bg-neon-pink/15",
+    shadow: "hover:drop-shadow-[0_0_16px_color-mix(in_srgb,var(--color-neon-pink)_30%,transparent)]",
+    x: 0,
+    y: 1.871,
+  },
 ];
+
+// The cluster now spans from y=-0.935 (top hex) to y=1.871 (bottom hex); its
+// vertical midpoint is 0.468, so shift every hex up by that to re-centre it.
+const Y_SHIFT = 0.468;
 
 export default function Fun() {
   const t = useTranslations("fun");
@@ -101,7 +135,7 @@ export default function Fun() {
                 // Hexagon width scales with the viewport; the cluster size derives from it.
                 "--hex": "clamp(112px, 27vw, 196px)",
                 width: "calc(var(--hex) * 2.7)",
-                height: "calc(var(--hex) * 2.8)",
+                height: "calc(var(--hex) * 3.9)",
               } as CSSProperties
             }
           >
@@ -111,7 +145,7 @@ export default function Fun() {
                 className="absolute top-1/2 left-1/2"
                 style={{
                   width: "var(--hex)",
-                  transform: `translate(calc(-50% + var(--hex) * ${x}), calc(-50% + var(--hex) * ${y}))`,
+                  transform: `translate(calc(-50% + var(--hex) * ${x}), calc(-50% + var(--hex) * ${y - Y_SHIFT}))`,
                 }}
               >
                 <motion.div
@@ -132,8 +166,8 @@ export default function Fun() {
                         className={`pointer-events-none absolute top-1/2 left-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 rounded-full ${spot} blur-2xl`}
                       />
                       <p className={`relative font-bold font-display text-xl sm:text-2xl ${color}`}>{value}</p>
-                      <p className="relative mt-1 font-medium text-slate-600 text-xs sm:text-sm dark:text-slate-500">
-                        {t(key)}
+                      <p className="relative mt-1 whitespace-pre-line font-medium text-slate-700 text-xs sm:text-sm dark:text-slate-400">
+                        {t(key).split(" ").join("\n")}
                       </p>
                     </div>
                     {/* Neon edge drawn as a real hexagon outline so it follows every side */}
@@ -144,7 +178,7 @@ export default function Fun() {
                       className="pointer-events-none absolute inset-0 h-full w-full"
                     >
                       <polygon
-                        points="25,2 75,2 98,50 75,98 25,98 2,50"
+                        points="25,1 75,1 99,50 75,99 25,99 1,50"
                         fill="none"
                         stroke={edge}
                         strokeWidth={3}
